@@ -11,14 +11,14 @@ smartTags:
 - app:oracle:openai
 - app:rest
 revision: 0
-projectRevision: 110
+projectRevision: 120
 status: CONFIGURED
 createdBy: rajashekar.gaddi@flexagon.com
 createdDate: 2026-11-23T04:45:03.059+0000
 updatedBy: rajashekar.gaddi@flexagon.com
 updatedDate: 2026-11-23T04:45:03.059+0000
 latestBy: avnish.patel@flexagon.com
-latestDate: 2026-11-25T04:35:29.829+0000
+latestDate: 2026-11-25T06:07:07.961+0000
 CAV: 1
 simplifiedMode: false
 assets:
@@ -45,11 +45,11 @@ assets:
     updatedBy: rajashekar.gaddi@flexagon.com
     updatedDate: 2026-11-23T04:45:01.620+0000
   labels:
-  - id: FD_1.0.3.DEFAULT_1795581329598
-    name: FD_1.0.3.default_1795581329598
+  - id: FD_1.0.4.DEFAULT_1795586827260
+    name: FD_1.0.4.default_1795586827260
     revision: 0
     updatedBy: avnish.patel@flexagon.com
-    updatedDate: 2026-11-25T04:35:29.829+0000
+    updatedDate: 2026-11-25T06:07:07.961+0000
 origin:
   tenantOCID: ocid1.tenancy.oc1..aaaaaaaahpnjx74d6mrng7xemyfnbfaxdzhlgdpoxfxmrwivslyktofveiwq
   serviceInstanceOCID: ocid1.integrationinstance.oc1.iad.amaaaaaavtuicmqa22bei2i6w2uovbbnwoksgxuhuwhjifpl6xinh3hqwmnq

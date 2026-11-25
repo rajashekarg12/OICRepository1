@@ -1,0 +1,41 @@
+{
+  "schema": "{\n    \"input1\": \"value\", \n    \"input2\": 19999, \n    \"input3\": false\n}",
+  "code": "MYTESTEVENT",
+  "created": "2026-11-24T10:06:27.490+0000",
+  "description": "",
+  "usageCount": 1,
+  "revision": "2",
+  "usageDetails": {
+    "subscribingIntegrations": [],
+    "publishingIntegrations": [{
+      "code": "SMART_ORDER_INTEGRATIO",
+      "isLocked": false,
+      "name": "Smart Order Integration (1.0)",
+      "links": [{
+        "rel": "self",
+        "href": "https://design.integration.us-ashburn-1.ocp.oraclecloud.com/ic/api/integration/v1/projects/SMART_WORKFLOW_POC/integrations/SMART_ORDER_INTEGRATIO?integrationInstance=dev-v3-oic-idzor6zhmigm-ia"
+      }],
+      "projectId": "SMART_WORKFLOW_POC",
+      "version": "01.00.0000",
+      "status": "CONFIGURED",
+      "usageType": "ICS_ProjectV2"
+    }],
+    "links": []
+  },
+  "createdBy": "rajashekar.gaddi@flexagon.com",
+  "scope": "private",
+  "name": "mytestEvent",
+  "schemaType": "json",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://design.integration.us-ashburn-1.ocp.oraclecloud.com/ic/api/integration/v1/projects/SMART_WORKFLOW_POC/v1/eventTypes/MYTESTEVENT%7C2?integrationInstance=dev-v3-oic-idzor6zhmigm-ia"
+    },
+    {
+      "rel": "canonical",
+      "href": "https://design.integration.us-ashburn-1.ocp.oraclecloud.com/ic/api/integration/v1/projects/SMART_WORKFLOW_POC/v1/eventTypes/MYTESTEVENT%7C2?integrationInstance=dev-v3-oic-idzor6zhmigm-ia"
+    }
+  ],
+  "id": "MYTESTEVENT|2",
+  "customHeaders": []
+}
