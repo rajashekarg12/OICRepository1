@@ -1,0 +1,65 @@
+{
+  "schema": "{\n    \"input1\": \"value\", \n    \"input2\": 123, \n    \"input3\": false\n}",
+  "code": "SMS_EVENT_TEST",
+  "created": "2025-04-01T06:54:04.987+0000",
+  "description": "Testing Events",
+  "usageCount": 2,
+  "revision": "1",
+  "usageDetails": {
+    "subscribingIntegrations": [
+      {
+        "code": "MONSOON_EVENT",
+        "isLocked": false,
+        "name": "Monsoon Event (1.0)",
+        "links": [{
+          "rel": "self",
+          "href": "https://design.integration.us-ashburn-1.ocp.oraclecloud.com/ic/api/integration/v1/integrations/MONSOON_EVENT%7C01.00.0000?integrationInstance=dev-v3-oic-idzor6zhmigm-ia"
+        }],
+        "version": "01.00.0000",
+        "status": "ACTIVATED",
+        "usageType": "ICS_ProjectV2"
+      },
+      {
+        "code": "ADW_INFO_EVENT",
+        "isLocked": false,
+        "name": "ADW_INFO_EVENT (1.0)",
+        "links": [{
+          "rel": "self",
+          "href": "https://design.integration.us-ashburn-1.ocp.oraclecloud.com/ic/api/integration/v1/integrations/ADW_INFO_EVENT%7C01.00.0000?integrationInstance=dev-v3-oic-idzor6zhmigm-ia"
+        }],
+        "version": "01.00.0000",
+        "status": "CONFIGURED",
+        "usageType": "ICS_ProjectV2"
+      }
+    ],
+    "publishingIntegrations": [],
+    "links": []
+  },
+  "createdBy": "muthu.sankaralingam@flexagon.com",
+  "scope": "public",
+  "name": "SMS_EVENT_TEST",
+  "schemaType": "json",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://design.integration.us-ashburn-1.ocp.oraclecloud.com/ic/api/integration/v1/eventTypes/SMS_EVENT_TEST%7C1?integrationInstance=dev-v3-oic-idzor6zhmigm-ia"
+    },
+    {
+      "rel": "canonical",
+      "href": "https://design.integration.us-ashburn-1.ocp.oraclecloud.com/ic/api/integration/v1/eventTypes/SMS_EVENT_TEST%7C1?integrationInstance=dev-v3-oic-idzor6zhmigm-ia"
+    }
+  ],
+  "id": "SMS_EVENT_TEST|1",
+  "customHeaders": [
+    {
+      "name": "header1",
+      "description": "Head1",
+      "type": "string"
+    },
+    {
+      "name": "header2",
+      "description": "Head2",
+      "type": "string"
+    }
+  ]
+}

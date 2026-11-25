@@ -8,14 +8,14 @@ type: DEVELOPED
 smartTags:
 - "app:rest,style:app driven orchestration"
 revision: 0
-projectRevision: 116
+projectRevision: 128
 status: CONFIGURED
 createdBy: rajashekar.gaddi@flexagon.com
 createdDate: 2026-11-23T04:45:03.059+0000
 updatedBy: rajashekar.gaddi@flexagon.com
 updatedDate: 2026-11-23T04:45:03.059+0000
 latestBy: avnish.patel@flexagon.com
-latestDate: 2026-11-25T06:07:02.398+0000
+latestDate: 2026-11-25T06:09:59.100+0000
 CAV: 1
 simplifiedMode: false
 assets:
@@ -38,11 +38,11 @@ assets:
     updatedBy: rajashekar.gaddi@flexagon.com
     updatedDate: 2026-11-23T04:45:03.059+0000
   labels:
-  - id: FD_1.0.4.DEFAULT_1795586822145
-    name: FD_1.0.4.default_1795586822145
+  - id: FD_1.0.5.DEFAULT_1795586998854
+    name: FD_1.0.5.default_1795586998854
     revision: 0
     updatedBy: avnish.patel@flexagon.com
-    updatedDate: 2026-11-25T06:07:02.398+0000
+    updatedDate: 2026-11-25T06:09:59.100+0000
 origin:
   tenantOCID: ocid1.tenancy.oc1..aaaaaaaahpnjx74d6mrng7xemyfnbfaxdzhlgdpoxfxmrwivslyktofveiwq
   serviceInstanceOCID: ocid1.integrationinstance.oc1.iad.amaaaaaavtuicmqa22bei2i6w2uovbbnwoksgxuhuwhjifpl6xinh3hqwmnq
