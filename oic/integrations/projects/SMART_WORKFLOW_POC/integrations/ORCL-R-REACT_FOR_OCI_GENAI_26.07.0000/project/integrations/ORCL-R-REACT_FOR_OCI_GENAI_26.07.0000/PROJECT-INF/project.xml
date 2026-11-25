@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:icsproject name="project_1" version="10.1" cversion="100" modelType="freeform" xmlns="http://www.oracle.com/2014/03/ics/project/definition" xmlns:ns2="http://www.oracle.com/2014/03/ics/flow/definition" xmlns:ns3="http://www.oracle.com/2014/03/ics/project">
+    <projectCode>ORCL-R-REACT_FOR_OCI_GENAI</projectCode>
+    <projectVersion>26.07.0000</projectVersion>
+    <projectName>ReAct Pattern Intg for OCI GenAI</projectName>
+    <percentComplete>100</percentComplete>
+    <projectHasErrors>false</projectHasErrors>
+    <projectHasWarnings>true</projectHasWarnings>
+    <ns3:icsflow name="flow_1">
+        <ns2:application name="application_18">
+            <ns2:role>source</ns2:role>
+            <ns2:adapter>
+                <ns2:type>app-adapter</ns2:type>
+                <ns2:code>REST_CONNECTION</ns2:code>
+                <ns2:name>runagenticreactpattern</ns2:name>
+                <ns2:property name="hasAttachment" value="false"/>
+            </ns2:adapter>
+            <ns2:mep>fire-and-forget</ns2:mep>
+            <ns2:outbound name="outbound_19">
+                <ns2:binding>rest</ns2:binding>
+                <ns2:operation>execute</ns2:operation>
+                <ns2:resourceGroup name="resourcegroup_20">
+                    <ns2:resource name="resource_22" location="../resources/application_18/outbound_19/resourcegroup_20/runagenticreactpattern_REQUEST.wsdl" type="wsdl"/>
+                    <ns2:resource name="resource_1685" location="../resources/application_18/outbound_19/resourcegroup_20/runagenticreactpattern_REQUEST.jca" type="jca"/>
+                </ns2:resourceGroup>
+                <ns2:output name="output_24">
+                    <ns2:role>request</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_23"/>
+                </ns2:output>
+            </ns2:outbound>
+        </ns2:application>
+        <ns2:application name="application_836">
+            <ns2:role>target</ns2:role>
+            <ns2:adapter>
+                <ns2:type>app-adapter</ns2:type>
+                <ns2:code>PRESEEDED_OIC_PATTERN_1741</ns2:code>
+                <ns2:name>GetMemoryFromStore</ns2:name>
+                <ns2:property name="hasAttachment" value="false"/>
+            </ns2:adapter>
+            <ns2:mep>push-sync</ns2:mep>
+            <ns2:inbound name="inbound_837">
+                <ns2:operation>GetCacheAction</ns2:operation>
+                <ns2:resourceGroup name="resourcegroup_838">
+                    <ns2:resource name="resource_839" location="../resources/application_836/inbound_837/resourcegroup_838/GetMemoryFromStore_REQUEST.jca" type="jca"/>
+                    <ns2:resource name="resource_840" location="../resources/application_836/inbound_837/resourcegroup_838/ICSFault.xsd" type="xsd"/>
+                    <ns2:resource name="resource_841" location="../resources/application_836/inbound_837/resourcegroup_838/GetMemoryFromStore_REQUEST.wsdl" type="wsdl"/>
+                </ns2:resourceGroup>
+                <ns2:input name="input_843">
+                    <ns2:role>request</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_842"/>
+                </ns2:input>
+                <ns2:output name="output_845">
+                    <ns2:role>response</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_844"/>
+                </ns2:output>
+                <ns2:output name="output_847">
+                    <ns2:role>fault</ns2:role>
+                    <ns2:subRole>APIInvocationError</ns2:subRole>
+                    <ns2:messageContextRef refUri="messagecontext_846"/>
+                </ns2:output>
+            </ns2:inbound>
+        </ns2:application>
+        <ns2:application name="application_1184">
+            <ns2:role>target</ns2:role>
+            <ns2:adapter>
+                <ns2:type>app-adapter</ns2:type>
+                <ns2:code>PRESEEDED_OIC_PATTERN_1741</ns2:code>
+                <ns2:name>Invoketool</ns2:name>
+                <ns2:property name="hasAttachment" value="false"/>
+            </ns2:adapter>
+            <ns2:mep>push-sync</ns2:mep>
+            <ns2:inbound name="inbound_1185">
+                <ns2:operation>InvokeToolFlowAction</ns2:operation>
+                <ns2:resourceGroup name="resourcegroup_1186">
+                    <ns2:resource name="resource_1187" location="../resources/application_1184/inbound_1185/resourcegroup_1186/Invoketool_REQUEST.jca" type="jca"/>
+                    <ns2:resource name="resource_1188" location="../resources/application_1184/inbound_1185/resourcegroup_1186/ICSFault.xsd" type="xsd"/>
+                    <ns2:resource name="resource_1189" location="../resources/application_1184/inbound_1185/resourcegroup_1186/Invoketool_REQUEST.wsdl" type="wsdl"/>
+                </ns2:resourceGroup>
+                <ns2:input name="input_1191">
+                    <ns2:role>request</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_1190"/>
+                </ns2:input>
+                <ns2:output name="output_1193">
+                    <ns2:role>response</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_1192"/>
+                </ns2:output>
+                <ns2:output name="output_1195">
+                    <ns2:role>fault</ns2:role>
+                    <ns2:subRole>APIInvocationError</ns2:subRole>
+                    <ns2:messageContextRef refUri="messagecontext_1194"/>
+                </ns2:output>
+            </ns2:inbound>
+        </ns2:application>
+        <ns2:application name="application_1212">
+            <ns2:role>target</ns2:role>
+            <ns2:adapter>
+                <ns2:type>app-adapter</ns2:type>
+                <ns2:code>PRESEEDED_OIC_PATTERN_1741</ns2:code>
+                <ns2:name>PersistMemoryToStore</ns2:name>
+                <ns2:property name="hasAttachment" value="false"/>
+            </ns2:adapter>
+            <ns2:mep>push-sync</ns2:mep>
+            <ns2:inbound name="inbound_1213">
+                <ns2:operation>UpdateCacheAction</ns2:operation>
+                <ns2:resourceGroup name="resourcegroup_1214">
+                    <ns2:resource name="resource_1215" location="../resources/application_1212/inbound_1213/resourcegroup_1214/PersistMemoryToStore_REQUEST.jca" type="jca"/>
+                    <ns2:resource name="resource_1216" location="../resources/application_1212/inbound_1213/resourcegroup_1214/ICSFault.xsd" type="xsd"/>
+                    <ns2:resource name="resource_1217" location="../resources/application_1212/inbound_1213/resourcegroup_1214/PersistMemoryToStore_REQUEST.wsdl" type="wsdl"/>
+                </ns2:resourceGroup>
+                <ns2:input name="input_1219">
+                    <ns2:role>request</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_1218"/>
+                </ns2:input>
+                <ns2:output name="output_1221">
+                    <ns2:role>response</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_1220"/>
+                </ns2:output>
+                <ns2:output name="output_1223">
+                    <ns2:role>fault</ns2:role>
+                    <ns2:subRole>APIInvocationError</ns2:subRole>
+                    <ns2:messageContextRef refUri="messagecontext_1222"/>
+                </ns2:output>
+            </ns2:inbound>
+        </ns2:application>
+        <ns2:application name="application_1263">
+            <ns2:role>target</ns2:role>
+            <ns2:adapter>
+                <ns2:type>app-adapter</ns2:type>
+                <ns2:code>PRESEEDED_OIC_PATTERN_1741</ns2:code>
+                <ns2:name>persistfullmemorytostore</ns2:name>
+                <ns2:property name="hasAttachment" value="false"/>
+            </ns2:adapter>
+            <ns2:mep>push-sync</ns2:mep>
+            <ns2:inbound name="inbound_1264">
+                <ns2:operation>UpdateCacheAction</ns2:operation>
+                <ns2:resourceGroup name="resourcegroup_1265">
+                    <ns2:resource name="resource_1266" location="../resources/application_1263/inbound_1264/resourcegroup_1265/persistfullmemorytostore_REQUEST.jca" type="jca"/>
+                    <ns2:resource name="resource_1267" location="../resources/application_1263/inbound_1264/resourcegroup_1265/ICSFault.xsd" type="xsd"/>
+                    <ns2:resource name="resource_1268" location="../resources/application_1263/inbound_1264/resourcegroup_1265/persistfullmemorytostore_REQUEST.wsdl" type="wsdl"/>
+                </ns2:resourceGroup>
+                <ns2:input name="input_1270">
+                    <ns2:role>request</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_1269"/>
+                </ns2:input>
+                <ns2:output name="output_1272">
+                    <ns2:role>response</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_1271"/>
+                </ns2:output>
+                <ns2:output name="output_1274">
+                    <ns2:role>fault</ns2:role>
+                    <ns2:subRole>APIInvocationError</ns2:subRole>
+                    <ns2:messageContextRef refUri="messagecontext_1273"/>
+                </ns2:output>
+            </ns2:inbound>
+        </ns2:application>
+        <ns2:application name="application_1310">
+            <ns2:role>target</ns2:role>
+            <ns2:adapter>
+                <ns2:type>app-adapter</ns2:type>
+                <ns2:code>PRESEEDED_AI_GENAI_1741</ns2:code>
+                <ns2:name>callLLM</ns2:name>
+                <ns2:property name="hasAttachment" value="false"/>
+            </ns2:adapter>
+            <ns2:mep>push-sync</ns2:mep>
+            <ns2:inbound name="inbound_1311">
+                <ns2:operation>ChatAction</ns2:operation>
+                <ns2:resourceGroup name="resourcegroup_1312">
+                    <ns2:resource name="resource_1315" location="../resources/application_1310/inbound_1311/resourcegroup_1312/callLLM_REQUEST.wsdl" type="wsdl"/>
+                    <ns2:resource name="resource_1581" location="../resources/application_1310/inbound_1311/resourcegroup_1312/callLLM_REQUEST.jca" type="jca"/>
+                    <ns2:resource name="resource_1582" location="../resources/application_1310/inbound_1311/resourcegroup_1312/ICSFault.xsd" type="xsd"/>
+                </ns2:resourceGroup>
+                <ns2:input name="input_1317">
+                    <ns2:role>request</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_1316"/>
+                </ns2:input>
+                <ns2:output name="output_1319">
+                    <ns2:role>response</ns2:role>
+                    <ns2:messageContextRef refUri="messagecontext_1318"/>
+                </ns2:output>
+                <ns2:output name="output_1321">
+                    <ns2:role>fault</ns2:role>
+                    <ns2:subRole>APIInvocationError</ns2:subRole>
+                    <ns2:messageContextRef refUri="messagecontext_1320"/>
+                </ns2:output>
+            </ns2:inbound>
+        </ns2:application>
+        <ns2:processor name="processor_1">
+            <ns2:type>integrationMetadata</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_2">
+                <ns2:resource name="resource_3" location="../resources/processor_1/resourcegroup_2/ICSIntegrationMetadata.xsd" type="xsd"/>
+            </ns2:resourceGroup>
+            <ns2:output name="output_5">
+                <ns2:messageContextRef refUri="messagecontext_4"/>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_6">
+            <ns2:type>patternIntegrationMemoryData</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_7">
+                <ns2:resource name="resource_8" location="../resources/processor_6/resourcegroup_7/PatternIntegrationMemory.xsd" type="xsd"/>
+            </ns2:resourceGroup>
+            <ns2:output name="output_10">
+                <ns2:messageContextRef refUri="messagecontext_9"/>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_11">
+            <ns2:type>messageTracker</ns2:type>
+            <ns2:role>messageTracker:global</ns2:role>
+            <ns2:trackingVariableGroup>
+                <ns2:trackingVariable>
+                    <ns2:role>tracking_var_1</ns2:role>
+                    <ns2:primary>true</ns2:primary>
+                    <ns2:name>conversationId</ns2:name>
+                    <ns2:xpath>/execute/QueryParameters/conversationId</ns2:xpath>
+                    <ns2:messageContextRef refUri="messagecontext_23"/>
+                    <ns2:output name="output_13">
+                        <ns2:messageContextRef refUri="messagecontext_12"/>
+                    </ns2:output>
+                </ns2:trackingVariable>
+                <ns2:trackingVariable>
+                    <ns2:role>tracking_var_2</ns2:role>
+                    <ns2:primary>false</ns2:primary>
+                    <ns2:name>Type</ns2:name>
+                    <ns2:messageContextRef refUri="messagecontext_23"/>
+                    <ns2:output name="output_15">
+                        <ns2:messageContextRef refUri="messagecontext_14"/>
+                    </ns2:output>
+                </ns2:trackingVariable>
+                <ns2:trackingVariable>
+                    <ns2:role>tracking_var_3</ns2:role>
+                    <ns2:primary>false</ns2:primary>
+                    <ns2:name>tracking_var_3</ns2:name>
+                    <ns2:messageContextRef refUri="messagecontext_23"/>
+                    <ns2:output name="output_17">
+                        <ns2:messageContextRef refUri="messagecontext_16"/>
+                    </ns2:output>
+                </ns2:trackingVariable>
+            </ns2:trackingVariableGroup>
+        </ns2:processor>
+        <ns2:processor name="processor_41">
+            <ns2:type>globalVariableDefinition</ns2:type>
+            <ns2:role>simpleType</ns2:role>
+            <ns2:output name="output_43">
+                <ns2:messageContextRef refUri="messagecontext_42"/>
+            </ns2:output>
+            <ns2:property name="variableName" value="counter"/>
+        </ns2:processor>
+        <ns2:processor name="processor_805">
+            <ns2:type>globalVariableDefinition</ns2:type>
+            <ns2:role>simpleType</ns2:role>
+            <ns2:output name="output_807">
+                <ns2:messageContextRef refUri="messagecontext_806"/>
+            </ns2:output>
+            <ns2:property name="variableName" value="Done"/>
+        </ns2:processor>
+        <ns2:processor name="processor_808">
+            <ns2:type>globalVariableDefinition</ns2:type>
+            <ns2:role>simpleType</ns2:role>
+            <ns2:output name="output_810">
+                <ns2:messageContextRef refUri="messagecontext_809"/>
+            </ns2:output>
+            <ns2:property name="variableName" value="isCacheEmpty"/>
+        </ns2:processor>
+        <ns2:processor name="processor_811">
+            <ns2:type>globalVariableDefinition</ns2:type>
+            <ns2:role>complexType</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_816">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_817" location="../resources/processor_811/resourcegroup_816/expr.properties" type="properties"/>
+            </ns2:resourceGroup>
+            <ns2:output name="output_815">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:output>
+            <ns2:property name="variableName" value="Memory_arr_var"/>
+            <ns2:property name="parentRefUri" value="processor_6/resourcegroup_7/resource_8"/>
+        </ns2:processor>
+        <ns2:processor name="processor_819">
+            <ns2:type>globalVariableDefinition</ns2:type>
+            <ns2:role>complexType</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_822">
+                <ns2:role>generatedArtifacts</ns2:role>
+                <ns2:resource name="resource_823" location="../resources/processor_819/resourcegroup_822/generated.wsdl" type="wsdl"/>
+            </ns2:resourceGroup>
+            <ns2:resourceGroup name="resourcegroup_1700">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1701" location="../resources/processor_819/resourcegroup_1700/expr.properties" type="properties"/>
+            </ns2:resourceGroup>
+            <ns2:output name="output_825">
+                <ns2:messageContextRef refUri="messagecontext_824"/>
+            </ns2:output>
+            <ns2:property name="variableName" value="pattern_var"/>
+            <ns2:property name="parentRefUri" value="application_18/outbound_19/resourcegroup_20/resource_22"/>
+        </ns2:processor>
+        <ns2:processor name="processor_828">
+            <ns2:type>stitch</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_829">
+                <ns2:resource name="resource_830" location="../resources/processor_828/resourcegroup_829/stitch.json" type="undefined"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_809">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>isCacheEmpty</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1683">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>unique_key</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>runagenticreactpattern</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_42">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>counter</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_824">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>pattern_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>initglobalvar</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_831">
+            <ns2:type>catchAll</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_832">
+                <ns2:resource name="resource_833" location="../resources/processor_831/resourcegroup_832/ICSFault.xsd" type="xsd"/>
+            </ns2:resourceGroup>
+            <ns2:output name="output_835">
+                <ns2:messageContextRef refUri="messagecontext_834"/>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_848">
+            <ns2:type>transformer</ns2:type>
+            <ns2:role>transformer:response-map</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_851">
+                <ns2:resource name="resource_852" location="../resources/processor_848/resourcegroup_851/req_ab6ddfe90c304d2e917e851c33eef0d9.xsl" type="xslt"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_1683">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>unique_key</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_849">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_850">
+                <ns2:messageContextRef refUri="messagecontext_842"/>
+            </ns2:output>
+            <ns2:property name="has-mappings" value="true"/>
+        </ns2:processor>
+        <ns2:processor name="processor_853">
+            <ns2:type>globalVariableDefinition</ns2:type>
+            <ns2:role>complexType</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_858">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_859" location="../resources/processor_853/resourcegroup_858/expr.properties" type="properties"/>
+            </ns2:resourceGroup>
+            <ns2:output name="output_857">
+                <ns2:messageContextRef refUri="messagecontext_856"/>
+            </ns2:output>
+            <ns2:property name="variableName" value="GetMemoryFromStoreResponse"/>
+            <ns2:property name="parentRefUri" value="application_836/inbound_837/resourcegroup_838/resource_841"/>
+        </ns2:processor>
+        <ns2:processor name="processor_860">
+            <ns2:type>stitch</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_861">
+                <ns2:resource name="resource_862" location="../resources/processor_860/resourcegroup_861/stitch.json" type="undefined"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_814">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>Memory_arr_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_844">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>GetMemoryFromStore</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_856">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>GetMemoryFromStoreResponse</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>updatememoryglobalvar</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_863">
+            <ns2:type>stitch</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_864">
+                <ns2:resource name="resource_865" location="../resources/processor_863/resourcegroup_864/stitch.json" type="undefined"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_809">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>isCacheEmpty</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_14">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>tracking_var_2</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>updatecacheemptyvar</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_866">
+            <ns2:type>contentBasedRouter</ns2:type>
+            <ns2:role>router:request-post-es</ns2:role>
+            <ns2:resourceRef refUri="messagecontext_856">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>GetMemoryFromStoreResponse</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_809">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>isCacheEmpty</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_867">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_868">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+                <ns2:resourceGroup name="resourcegroup_1711">
+                    <ns2:resource name="resource_1712" location="../resources/processor_866/output_868/resourcegroup_1711/expr.properties" type="properties"/>
+                </ns2:resourceGroup>
+            </ns2:output>
+            <ns2:output name="output_877">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+                <ns2:resourceGroup name="resourcegroup_1713">
+                    <ns2:resource name="resource_1714" location="../resources/processor_866/output_877/resourcegroup_1713/expr.properties" type="properties"/>
+                </ns2:resourceGroup>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_882">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1750">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1751" location="../resources/processor_882/resourcegroup_1750/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1752" location="../resources/processor_882/resourcegroup_1750/CONTENTexpr.properties" type="properties">
+                    <ns2:role>CONTENT</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:input name="input_890">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="true"/>
+            <ns2:property name="addToTracking" value="true"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:property name="recordSelection" value="OTHERS"/>
+            <ns2:processorName>addAgentRoleToMemory</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_894">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1695">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1696" location="../resources/processor_894/resourcegroup_1695/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1697" location="../resources/processor_894/resourcegroup_1695/CONTENTexpr.properties" type="properties">
+                    <ns2:role>CONTENT</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:input name="input_908">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="true"/>
+            <ns2:property name="addToTracking" value="true"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:processorName>addAgentGuidelinesToMemory</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_912">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1688">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1689" location="../resources/processor_912/resourcegroup_1688/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1690" location="../resources/processor_912/resourcegroup_1688/CONTENTexpr.properties" type="properties">
+                    <ns2:role>CONTENT</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_824">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>pattern_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_932">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="true"/>
+            <ns2:property name="addToTracking" value="true"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:property name="recordSelection" value="OTHERS"/>
+            <ns2:processorName>addPatternGuidelinesToMemory</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_936">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1738">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1739" location="../resources/processor_936/resourcegroup_1738/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1740" location="../resources/processor_936/resourcegroup_1738/CONTENTexpr.properties" type="properties">
+                    <ns2:role>CONTENT</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:input name="input_944">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="true"/>
+            <ns2:property name="addToTracking" value="true"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:property name="recordSelection" value="OTHERS"/>
+            <ns2:processorName>addUserPromptToMemory</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_948">
+            <ns2:type>for</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_955">
+                <ns2:role>generatedArtifacts</ns2:role>
+                <ns2:resource name="resource_956" location="../resources/processor_948/resourcegroup_955/generated.wsdl" type="wsdl">
+                    <ns2:property name="parentRefUri" value="processor_819/resourcegroup_822/resource_823"/>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceGroup name="resourcegroup_1698">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1699" location="../resources/processor_948/resourcegroup_1698/expr.properties" type="properties"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_824">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>pattern_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:output name="output_958">
+                <ns2:messageContextRef refUri="messagecontext_957"/>
+            </ns2:output>
+            <ns2:property name="parallel" value="false"/>
+            <ns2:processorName>ForEachToolDetail</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_961">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1753">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1754" location="../resources/processor_961/resourcegroup_1753/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1755" location="../resources/processor_961/resourcegroup_1753/CONTENTexpr.properties" type="properties">
+                    <ns2:role>CONTENT</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_957">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>current_toolDetails</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_969">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="true"/>
+            <ns2:property name="addToTracking" value="true"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:property name="recordSelection" value="OTHERS"/>
+            <ns2:processorName>addToolDetailToMemory</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_979">
+            <ns2:type>contentBasedRouter</ns2:type>
+            <ns2:role>router:request-post-es</ns2:role>
+            <ns2:input name="input_980">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_981">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+                <ns2:resourceGroup name="resourcegroup_1691">
+                    <ns2:resource name="resource_1692" location="../resources/processor_979/output_981/resourcegroup_1691/expr.properties" type="properties"/>
+                </ns2:resourceGroup>
+            </ns2:output>
+            <ns2:output name="output_1009">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+                <ns2:resourceGroup name="resourcegroup_1693">
+                    <ns2:resource name="resource_1694" location="../resources/processor_979/output_1009/resourcegroup_1693/expr.properties" type="properties"/>
+                </ns2:resourceGroup>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_990">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1706">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1707" location="../resources/processor_990/resourcegroup_1706/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1708" location="../resources/processor_990/resourcegroup_1706/OUTPUTTYPEexpr.properties" type="properties">
+                    <ns2:role>OUTPUTTYPE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1709" location="../resources/processor_990/resourcegroup_1706/CALLIDexpr.properties" type="properties">
+                    <ns2:role>CALLID</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1710" location="../resources/processor_990/resourcegroup_1706/CONTENTexpr.properties" type="properties">
+                    <ns2:role>CONTENT</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_856">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>GetMemoryFromStoreResponse</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1000">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="true"/>
+            <ns2:property name="addToTracking" value="true"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:processorName>addCallbackResponseToMemory</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1006">
+            <ns2:type>stitch</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1007">
+                <ns2:resource name="resource_1008" location="../resources/processor_1006/resourcegroup_1007/stitch.json" type="undefined"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_14">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>tracking_var_2</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>updateflowtype</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1024">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1718">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1719" location="../resources/processor_1024/resourcegroup_1718/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1720" location="../resources/processor_1024/resourcegroup_1718/CONTENTexpr.properties" type="properties">
+                    <ns2:role>CONTENT</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:input name="input_1032">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="true"/>
+            <ns2:property name="addToTracking" value="true"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:processorName>addUserPromptToMem</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1036">
+            <ns2:type>stitch</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1037">
+                <ns2:resource name="resource_1038" location="../resources/processor_1036/resourcegroup_1037/stitch.json" type="undefined"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_14">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>tracking_var_2</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>updateflowtypevar</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1039">
+            <ns2:type>while</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1721">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1722" location="../resources/processor_1039/resourcegroup_1721/expr.properties" type="properties"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_806">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>Done</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>WhileNotDone</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1048">
+            <ns2:type>stitch</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1049">
+                <ns2:resource name="resource_1050" location="../resources/processor_1048/resourcegroup_1049/stitch.json" type="undefined"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_806">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>Done</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_42">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>counter</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>initloopvariables</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1068">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1730">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1731" location="../resources/processor_1068/resourcegroup_1730/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1732" location="../resources/processor_1068/resourcegroup_1730/TOOLCALLSexpr.properties" type="properties">
+                    <ns2:role>TOOLCALLS</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1733" location="../resources/processor_1068/resourcegroup_1730/TOOLNAMEexpr.properties" type="properties">
+                    <ns2:role>TOOLNAME</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1734" location="../resources/processor_1068/resourcegroup_1730/CONTENTexpr.properties" type="properties">
+                    <ns2:role>CONTENT</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1735" location="../resources/processor_1068/resourcegroup_1730/FINISHEDREASONexpr.properties" type="properties">
+                    <ns2:role>FINISHEDREASON</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1318">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>callLLM</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1080">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="false"/>
+            <ns2:property name="addToTracking" value="true"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:property name="recordSelection" value="OTHERS"/>
+            <ns2:processorName>addLLMResponseToMemory</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1102">
+            <ns2:type>contentBasedRouter</ns2:type>
+            <ns2:role>router:request-post-es</ns2:role>
+            <ns2:resourceRef refUri="messagecontext_1318">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>callLLM</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1103">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_1104">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+                <ns2:resourceGroup name="resourcegroup_1702">
+                    <ns2:resource name="resource_1703" location="../resources/processor_1102/output_1104/resourcegroup_1702/expr.properties" type="properties"/>
+                </ns2:resourceGroup>
+            </ns2:output>
+            <ns2:output name="output_1125">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+                <ns2:resourceGroup name="resourcegroup_1704">
+                    <ns2:resource name="resource_1705" location="../resources/processor_1102/output_1125/resourcegroup_1704/expr.properties" type="properties"/>
+                </ns2:resourceGroup>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_1113">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1715">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1716" location="../resources/processor_1113/resourcegroup_1715/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1717" location="../resources/processor_1113/resourcegroup_1715/CONTENTexpr.properties" type="properties">
+                    <ns2:role>CONTENT</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1318">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>callLLM</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1121">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="true"/>
+            <ns2:property name="addToTracking" value="false"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:property name="recordSelection" value="OTHERS"/>
+            <ns2:processorName>addmessageTomemory</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1145">
+            <ns2:type>stitch</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1146">
+                <ns2:resource name="resource_1147" location="../resources/processor_1145/resourcegroup_1146/stitch.json" type="undefined"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_1453">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>message_in_choice_globar_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1318">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>callLLM</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>initchoiceglobalvar</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1148">
+            <ns2:type>for</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1500">
+                <ns2:role>generatedArtifacts</ns2:role>
+                <ns2:resource name="resource_1501" location="../resources/processor_1148/resourcegroup_1500/generated.wsdl" type="wsdl">
+                    <ns2:property name="parentRefUri" value="processor_1448/resourcegroup_1451/resource_1452"/>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceGroup name="resourcegroup_1585">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1586" location="../resources/processor_1148/resourcegroup_1585/expr.properties" type="properties"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1453">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>message_in_choice_globar_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:output name="output_1503">
+                <ns2:messageContextRef refUri="messagecontext_1502"/>
+            </ns2:output>
+            <ns2:property name="parallel" value="false"/>
+            <ns2:processorName>ForEachToolCallInMessage</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1161">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1781">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1782" location="../resources/processor_1161/resourcegroup_1781/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1783" location="../resources/processor_1161/resourcegroup_1781/OUTPUTTYPEexpr.properties" type="properties">
+                    <ns2:role>OUTPUTTYPE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1784" location="../resources/processor_1161/resourcegroup_1781/ARGUMENTSexpr.properties" type="properties">
+                    <ns2:role>ARGUMENTS</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1785" location="../resources/processor_1161/resourcegroup_1781/TOOLNAMEexpr.properties" type="properties">
+                    <ns2:role>TOOLNAME</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1786" location="../resources/processor_1161/resourcegroup_1781/CALLIDexpr.properties" type="properties">
+                    <ns2:role>CALLID</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1787" location="../resources/processor_1161/resourcegroup_1781/OUTPUTIDexpr.properties" type="properties">
+                    <ns2:role>OUTPUTID</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1157">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>current_toolcall</ns2:subRole>
+                <ns2:property name="out-of-scope" value="true"/>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1502">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>current_toolcall</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1453">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>message_in_choice_globar_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1173">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="true"/>
+            <ns2:property name="addToTracking" value="false"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:property name="recordSelection" value="OTHERS"/>
+            <ns2:processorName>addToolRequestToMemory</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1181">
+            <ns2:type>stitch</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1182">
+                <ns2:resource name="resource_1183" location="../resources/processor_1181/resourcegroup_1182/stitch.json" type="undefined"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_806">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>Done</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>resetloopcondition</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1201">
+            <ns2:type>contentBasedRouter</ns2:type>
+            <ns2:role>router:request-post-es</ns2:role>
+            <ns2:resourceRef refUri="messagecontext_1157">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>current_toolcall</ns2:subRole>
+                <ns2:property name="out-of-scope" value="true"/>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_824">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>pattern_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1502">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>current_toolcall</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1202">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_1203">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+                <ns2:resourceGroup name="resourcegroup_1772">
+                    <ns2:resource name="resource_1773" location="../resources/processor_1201/output_1203/resourcegroup_1772/expr.properties" type="properties"/>
+                </ns2:resourceGroup>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_1224">
+            <ns2:type>transformer</ns2:type>
+            <ns2:role>transformer:response-map</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1227">
+                <ns2:resource name="resource_1228" location="../resources/processor_1224/resourcegroup_1227/req_e4f54fc466ef48e997aabb564d1ce21e.xsl" type="xslt"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_814">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>Memory_arr_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1683">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>unique_key</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1225">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_1226">
+                <ns2:messageContextRef refUri="messagecontext_1218"/>
+            </ns2:output>
+            <ns2:property name="has-mappings" value="true"/>
+        </ns2:processor>
+        <ns2:processor name="processor_1229">
+            <ns2:type>memory</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1774">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1775" location="../resources/processor_1229/resourcegroup_1774/ROLEexpr.properties" type="properties">
+                    <ns2:role>ROLE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1776" location="../resources/processor_1229/resourcegroup_1774/OUTPUTTYPEexpr.properties" type="properties">
+                    <ns2:role>OUTPUTTYPE</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1777" location="../resources/processor_1229/resourcegroup_1774/TOOLNAMEexpr.properties" type="properties">
+                    <ns2:role>TOOLNAME</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1778" location="../resources/processor_1229/resourcegroup_1774/CALLIDexpr.properties" type="properties">
+                    <ns2:role>CALLID</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1779" location="../resources/processor_1229/resourcegroup_1774/OUTPUTIDexpr.properties" type="properties">
+                    <ns2:role>OUTPUTID</ns2:role>
+                </ns2:resource>
+                <ns2:resource name="resource_1780" location="../resources/processor_1229/resourcegroup_1774/CONTENTexpr.properties" type="properties">
+                    <ns2:role>CONTENT</ns2:role>
+                </ns2:resource>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_23">
+                <ns2:role>primary-source</ns2:role>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1192">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>Invoketool</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1157">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>current_toolcall</ns2:subRole>
+                <ns2:property name="out-of-scope" value="true"/>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1502">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>current_toolcall</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1241">
+                <ns2:messageContextRef refUri="messagecontext_814"/>
+            </ns2:input>
+            <ns2:property name="addToMemories" value="true"/>
+            <ns2:property name="addToTracking" value="true"/>
+            <ns2:property name="patternMemoryGVArrayName" value="Memory_arr_var"/>
+            <ns2:property name="recordSelection" value="OTHERS"/>
+            <ns2:processorName>addToolResponseToMemory</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1249">
+            <ns2:type>contentBasedRouter</ns2:type>
+            <ns2:role>router:request-post-es</ns2:role>
+            <ns2:resourceRef refUri="messagecontext_806">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>Done</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_42">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>counter</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_824">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>pattern_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1250">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_1251">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+                <ns2:resourceGroup name="resourcegroup_1748">
+                    <ns2:resource name="resource_1749" location="../resources/processor_1249/output_1251/resourcegroup_1748/expr.properties" type="properties"/>
+                </ns2:resourceGroup>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_1260">
+            <ns2:type>stitch</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1261">
+                <ns2:resource name="resource_1262" location="../resources/processor_1260/resourcegroup_1261/stitch.json" type="undefined"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_806">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>Done</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>makedoneastrue</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1275">
+            <ns2:type>transformer</ns2:type>
+            <ns2:role>transformer:response-map</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1278">
+                <ns2:resource name="resource_1279" location="../resources/processor_1275/resourcegroup_1278/req_b718e183e3f24e6d9b2c3c630b43b12b.xsl" type="xslt"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_814">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>Memory_arr_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_1683">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>unique_key</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1276">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_1277">
+                <ns2:messageContextRef refUri="messagecontext_1269"/>
+            </ns2:output>
+            <ns2:property name="has-mappings" value="true"/>
+        </ns2:processor>
+        <ns2:processor name="processor_1290">
+            <ns2:type>contentBasedRouter</ns2:type>
+            <ns2:role>router:request-post-es</ns2:role>
+            <ns2:resourceRef refUri="messagecontext_957">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>current_toolDetails</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1291">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_1292">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+                <ns2:resourceGroup name="resourcegroup_1756">
+                    <ns2:resource name="resource_1757" location="../resources/processor_1290/output_1292/resourcegroup_1756/expr.properties" type="properties"/>
+                </ns2:resourceGroup>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:processor name="processor_1322">
+            <ns2:type>transformer</ns2:type>
+            <ns2:role>transformer:response-map</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1325">
+                <ns2:resource name="resource_1326" location="../resources/processor_1322/resourcegroup_1325/req_c4a3e46010174d67b565bef9afdc00ba.xsl" type="xslt"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_814">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>Memory_arr_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:resourceRef refUri="messagecontext_824">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>pattern_var</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1323">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_1324">
+                <ns2:messageContextRef refUri="messagecontext_1316"/>
+            </ns2:output>
+            <ns2:property name="has-mappings" value="true"/>
+            <ns2:property name="dependent-dvms" value="OCIGenAI_Properties"/>
+            <ns2:property name="dependent-xpath-apis" value="CONVERTTOOLARRAYFROMOPENAITOGENN:01.00.0000:convertToolArrayFromOpenAItoGenNew.js:oracle.tip.pc.services.functions:JsExecutor_xpath2078314881:convertToolArrayFromOpenAItoGenAINew:inputStr(string):provider(string)-outputStr(string)"/>
+        </ns2:processor>
+        <ns2:processor name="processor_1448">
+            <ns2:type>globalVariableDefinition</ns2:type>
+            <ns2:role>complexType</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1451">
+                <ns2:role>generatedArtifacts</ns2:role>
+                <ns2:resource name="resource_1452" location="../resources/processor_1448/resourcegroup_1451/generated.wsdl" type="wsdl"/>
+            </ns2:resourceGroup>
+            <ns2:resourceGroup name="resourcegroup_1593">
+                <ns2:role>exprBuilderProperties</ns2:role>
+                <ns2:resource name="resource_1594" location="../resources/processor_1448/resourcegroup_1593/expr.properties" type="properties"/>
+            </ns2:resourceGroup>
+            <ns2:output name="output_1454">
+                <ns2:messageContextRef refUri="messagecontext_1453"/>
+            </ns2:output>
+            <ns2:property name="variableName" value="message_in_choice_globar_var"/>
+            <ns2:property name="parentRefUri" value="application_1310/inbound_1311/resourcegroup_1312/resource_1315"/>
+        </ns2:processor>
+        <ns2:processor name="processor_1550">
+            <ns2:type>transformer</ns2:type>
+            <ns2:role>transformer:response-map</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1553">
+                <ns2:resource name="resource_1554" location="../resources/processor_1550/resourcegroup_1553/req_f3450875c00d43c8b7302245e331de79.xsl" type="xslt"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_1502">
+                <ns2:role>secondary-source</ns2:role>
+                <ns2:subRole>current_toolcall</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:input name="input_1551">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_1552">
+                <ns2:messageContextRef refUri="messagecontext_1190"/>
+            </ns2:output>
+            <ns2:property name="has-mappings" value="true"/>
+        </ns2:processor>
+        <ns2:processor name="processor_1682">
+            <ns2:type>globalVariableDefinition</ns2:type>
+            <ns2:role>simpleType</ns2:role>
+            <ns2:output name="output_1684">
+                <ns2:messageContextRef refUri="messagecontext_1683"/>
+            </ns2:output>
+            <ns2:property name="variableName" value="unique_key"/>
+        </ns2:processor>
+        <ns2:processor name="processor_1758">
+            <ns2:type>stitch</ns2:type>
+            <ns2:role>undefined</ns2:role>
+            <ns2:resourceGroup name="resourcegroup_1759">
+                <ns2:resource name="resource_1760" location="../resources/processor_1758/resourcegroup_1759/stitch.json" type="undefined"/>
+            </ns2:resourceGroup>
+            <ns2:resourceRef refUri="messagecontext_1318">
+                <ns2:role>source-and-target</ns2:role>
+                <ns2:subRole>callLLM</ns2:subRole>
+            </ns2:resourceRef>
+            <ns2:processorName>AppendToolIdForGeminiModel</ns2:processorName>
+        </ns2:processor>
+        <ns2:processor name="processor_1761">
+            <ns2:type>contentBasedRouter</ns2:type>
+            <ns2:role>router:request-post-es</ns2:role>
+            <ns2:input name="input_1762">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+            </ns2:input>
+            <ns2:output name="output_1763">
+                <ns2:messageContextRef refUri="messagecontext_23"/>
+                <ns2:resourceGroup name="resourcegroup_1770">
+                    <ns2:resource name="resource_1771" location="../resources/processor_1761/output_1763/resourcegroup_1770/expr.properties" type="properties"/>
+                </ns2:resourceGroup>
+            </ns2:output>
+        </ns2:processor>
+        <ns2:messageContext name="messagecontext_4">
+            <ns2:resourceRef refUri="processor_1/resourcegroup_2/resource_3"/>
+            <ns2:rootElement elementName="metadata" namespace="http://www.oracle.com/2014/03/ic/integration/metadata"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_9">
+            <ns2:resourceRef refUri="processor_6/resourcegroup_7/resource_8"/>
+            <ns2:rootElement elementName="memories" namespace="http://www.oracle.com/2014/03/ic/integration/pattern/memory"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_12">
+            <ns2:rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_14">
+            <ns2:rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_16">
+            <ns2:rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_23">
+            <ns2:resourceRef refUri="application_18/outbound_19/resourcegroup_20/resource_22"/>
+            <ns2:rootElement elementName="execute" namespace="http://xmlns.oracle.com/cloud/adapter/REST/runagenticreactpattern_REQUEST/types"/>
+            <ns2:wsdlMessage messageName="executeRequestMessage" namespace="http://xmlns.oracle.com/cloud/adapter/REST/runagenticreactpattern_REQUEST" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_42">
+            <ns2:rootElement elementName="double" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_806">
+            <ns2:rootElement elementName="boolean" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_809">
+            <ns2:rootElement elementName="boolean" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_814">
+            <ns2:resourceRef refUri="processor_6/resourcegroup_7/resource_8"/>
+            <ns2:rootElement elementName="memories" namespace="http://www.oracle.com/2014/03/ic/integration/pattern/memory"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_824">
+            <ns2:resourceRef refUri="processor_819/resourcegroup_822/resource_823"/>
+            <ns2:rootElement elementName="patternRoles" namespace="http://xmlns.oracle.com/cloud/adapter/REST/runagenticreactpattern/types"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_834">
+            <ns2:resourceRef refUri="processor_831/resourcegroup_832/resource_833"/>
+            <ns2:rootElement elementName="fault" namespace="http://www.oracle.com/2014/03/ics/fault"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_842">
+            <ns2:resourceRef refUri="application_836/inbound_837/resourcegroup_838/resource_841"/>
+            <ns2:rootElement elementName="GetCacheAction" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/GetMemoryFromStore/types"/>
+            <ns2:wsdlMessage messageName="GetCacheActionRequestMessage" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/GetMemoryFromStore" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_844">
+            <ns2:resourceRef refUri="application_836/inbound_837/resourcegroup_838/resource_841"/>
+            <ns2:rootElement elementName="GetCacheActionResponse" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/GetMemoryFromStore/types"/>
+            <ns2:wsdlMessage messageName="GetCacheActionResponseMessage" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/GetMemoryFromStore" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_846">
+            <ns2:resourceRef refUri="application_836/inbound_837/resourcegroup_838/resource_841"/>
+            <ns2:rootElement elementName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/generic/rest/fault/oracle:oicpatternadapter/GetMemoryFromStore"/>
+            <ns2:wsdlMessage messageName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/GetMemoryFromStore" partName="parameters"/>
+            <ns2:wsdlFault faultName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/GetMemoryFromStore"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_856">
+            <ns2:resourceRef refUri="application_836/inbound_837/resourcegroup_838/resource_841"/>
+            <ns2:rootElement elementName="GetCacheActionResponse" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/GetMemoryFromStore/types"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_957">
+            <ns2:resourceRef refUri="processor_948/resourcegroup_955/resource_956"/>
+            <ns2:rootElement elementName="toolDetails" namespace="http://xmlns.oracle.com/cloud/adapter/REST/runagenticreactpattern/types"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1190">
+            <ns2:resourceRef refUri="application_1184/inbound_1185/resourcegroup_1186/resource_1189"/>
+            <ns2:rootElement elementName="InvokeToolFlowAction" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/Invoketool/types"/>
+            <ns2:wsdlMessage messageName="InvokeToolFlowActionRequestMessage" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/Invoketool" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1192">
+            <ns2:resourceRef refUri="application_1184/inbound_1185/resourcegroup_1186/resource_1189"/>
+            <ns2:rootElement elementName="InvokeToolFlowActionResponse" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/Invoketool/types"/>
+            <ns2:wsdlMessage messageName="InvokeToolFlowActionResponseMessage" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/Invoketool" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1194">
+            <ns2:resourceRef refUri="application_1184/inbound_1185/resourcegroup_1186/resource_1189"/>
+            <ns2:rootElement elementName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/generic/rest/fault/oracle:oicpatternadapter/Invoketool"/>
+            <ns2:wsdlMessage messageName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/Invoketool" partName="parameters"/>
+            <ns2:wsdlFault faultName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/Invoketool"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1218">
+            <ns2:resourceRef refUri="application_1212/inbound_1213/resourcegroup_1214/resource_1217"/>
+            <ns2:rootElement elementName="UpdateCacheAction" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/PersistMemoryToStore/types"/>
+            <ns2:wsdlMessage messageName="UpdateCacheActionRequestMessage" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/PersistMemoryToStore" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1220">
+            <ns2:resourceRef refUri="application_1212/inbound_1213/resourcegroup_1214/resource_1217"/>
+            <ns2:rootElement elementName="UpdateCacheActionResponse" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/PersistMemoryToStore/types"/>
+            <ns2:wsdlMessage messageName="UpdateCacheActionResponseMessage" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/PersistMemoryToStore" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1222">
+            <ns2:resourceRef refUri="application_1212/inbound_1213/resourcegroup_1214/resource_1217"/>
+            <ns2:rootElement elementName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/generic/rest/fault/oracle:oicpatternadapter/PersistMemoryToStore"/>
+            <ns2:wsdlMessage messageName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/PersistMemoryToStore" partName="parameters"/>
+            <ns2:wsdlFault faultName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/PersistMemoryToStore"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1269">
+            <ns2:resourceRef refUri="application_1263/inbound_1264/resourcegroup_1265/resource_1268"/>
+            <ns2:rootElement elementName="UpdateCacheAction" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/persistfullmemorytostore/types"/>
+            <ns2:wsdlMessage messageName="UpdateCacheActionRequestMessage" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/persistfullmemorytostore" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1271">
+            <ns2:resourceRef refUri="application_1263/inbound_1264/resourcegroup_1265/resource_1268"/>
+            <ns2:rootElement elementName="UpdateCacheActionResponse" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/persistfullmemorytostore/types"/>
+            <ns2:wsdlMessage messageName="UpdateCacheActionResponseMessage" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/persistfullmemorytostore" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1273">
+            <ns2:resourceRef refUri="application_1263/inbound_1264/resourcegroup_1265/resource_1268"/>
+            <ns2:rootElement elementName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/generic/rest/fault/oracle:oicpatternadapter/persistfullmemorytostore"/>
+            <ns2:wsdlMessage messageName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/persistfullmemorytostore" partName="parameters"/>
+            <ns2:wsdlFault faultName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/persistfullmemorytostore"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1316">
+            <ns2:resourceRef refUri="application_1310/inbound_1311/resourcegroup_1312/resource_1315"/>
+            <ns2:rootElement elementName="ChatAction" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:aigenai/callLLM/types"/>
+            <ns2:wsdlMessage messageName="ChatActionRequestMessage" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:aigenai/callLLM" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1318">
+            <ns2:resourceRef refUri="application_1310/inbound_1311/resourcegroup_1312/resource_1315"/>
+            <ns2:rootElement elementName="ChatActionResponse" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:aigenai/callLLM/types"/>
+            <ns2:wsdlMessage messageName="ChatActionResponseMessage" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:aigenai/callLLM" partName="parameters"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1320">
+            <ns2:resourceRef refUri="application_1310/inbound_1311/resourcegroup_1312/resource_1315"/>
+            <ns2:rootElement elementName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/generic/rest/fault/oracle:aigenai/callLLM"/>
+            <ns2:wsdlMessage messageName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:aigenai/callLLM" partName="parameters"/>
+            <ns2:wsdlFault faultName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:aigenai/callLLM"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1453">
+            <ns2:resourceRef refUri="processor_1448/resourcegroup_1451/resource_1452"/>
+            <ns2:rootElement elementName="message" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:aigenai/callLLM/types"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1502">
+            <ns2:resourceRef refUri="processor_1148/resourcegroup_1500/resource_1501"/>
+            <ns2:rootElement elementName="toolCalls" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:aigenai/callLLM/types"/>
+        </ns2:messageContext>
+        <ns2:messageContext name="messagecontext_1683">
+            <ns2:rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </ns2:messageContext>
+        <ns2:commonNamespaceMaps>
+            <ns2:commonNamespaceMap prefix="ns5" namespace="http://xmlns.oracle.com/cloud/adapter/REST/runagenticreactpattern_REQUEST/types"/>
+            <ns2:commonNamespaceMap prefix="ns8" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:oicpatternadapter/GetMemoryFromStore/types"/>
+            <ns2:commonNamespaceMap prefix="ns35" namespace="http://xml.oracle.com/types/REST/runagenticreactpattern_REQUEST"/>
+            <ns2:commonNamespaceMap prefix="ns11" namespace="http://www.oracle.com/2014/03/ic/integration/pattern/memory"/>
+            <ns2:commonNamespaceMap prefix="fn" namespace="http://www.w3.org/2005/xpath-functions"/>
+            <ns2:commonNamespaceMap prefix="ns27" namespace="http://xmlns.oracle.com/cloud/adapter/oracle:aigenai/callLLM/types"/>
+            <ns2:commonNamespaceMap prefix="ns2" namespace="http://xmlns.oracle.com/cloud/adapter/REST/runagenticreactpattern/types"/>
+            <ns2:commonNamespaceMap prefix="oraext" namespace="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"/>
+        </ns2:commonNamespaceMaps>
+        <ns2:orchestration>
+            <ns2:integrationMetadata id="im0" refUri="processor_1"/>
+            <ns2:patternMemoryDataType id="pm0" refUri="processor_6"/>
+            <ns2:globalVariable id="gtv0" refUri="processor_41"/>
+            <ns2:globalVariable id="gtv1" refUri="processor_805"/>
+            <ns2:globalVariable id="gtv2" refUri="processor_808"/>
+            <ns2:globalVariable id="gtv3" refUri="processor_811"/>
+            <ns2:globalVariable id="gtv4" refUri="processor_819"/>
+            <ns2:globalVariable id="gtv5" refUri="processor_853"/>
+            <ns2:globalVariable id="gtv7" refUri="processor_1448"/>
+            <ns2:globalVariable id="gtv6" refUri="processor_1682"/>
+            <ns2:receive trackingRefUri="processor_11" id="r0" refUri="application_18/outbound_19/output_24"/>
+            <ns2:stitch id="sh0" refUri="processor_828"/>
+            <ns2:try id="t0" name="MemoryStoreInvokeScope">
+                <ns2:transformer id="m0" refUri="processor_848"/>
+                <ns2:invoke id="i0" refUri="application_836" name="Agentic Pattern1"/>
+                <ns2:stitch id="sh1" refUri="processor_860"/>
+                <ns2:catchAll id="ta0" refUri="processor_831">
+                    <ns2:stitch id="sh2" refUri="processor_863"/>
+                </ns2:catchAll>
+            </ns2:try>
+            <ns2:router id="s0" refUri="processor_866">
+                <ns2:route id="sc0" refUri="processor_866/output_868">
+                    <ns2:memory id="me0" refUri="processor_882"/>
+                    <ns2:memory id="me1" refUri="processor_894"/>
+                    <ns2:memory id="me2" refUri="processor_912"/>
+                    <ns2:memory id="me3" refUri="processor_936"/>
+                    <ns2:for id="f0" refUri="processor_948">
+                        <ns2:router id="s5" refUri="processor_1290">
+                            <ns2:route id="sc8" refUri="processor_1290/output_1292">
+                                <ns2:memory id="me4" refUri="processor_961"/>
+                            </ns2:route>
+                        </ns2:router>
+                    </ns2:for>
+                </ns2:route>
+                <ns2:route id="sc1" refUri="processor_866/output_877">
+                    <ns2:router id="s1" refUri="processor_979">
+                        <ns2:route id="sc2" refUri="processor_979/output_981">
+                            <ns2:memory id="me5" refUri="processor_990"/>
+                            <ns2:stitch id="sh3" refUri="processor_1006"/>
+                        </ns2:route>
+                        <ns2:route id="sc3" refUri="processor_979/output_1009">
+                            <ns2:memory id="me6" refUri="processor_1024"/>
+                            <ns2:stitch id="sh4" refUri="processor_1036"/>
+                        </ns2:route>
+                    </ns2:router>
+                </ns2:route>
+            </ns2:router>
+            <ns2:while id="wh0" refUri="processor_1039">
+                <ns2:stitch id="sh5" refUri="processor_1048"/>
+                <ns2:transformer id="m5" refUri="processor_1322"/>
+                <ns2:invoke id="i5" refUri="application_1310" name="OCI Generative AI1"/>
+                <ns2:router id="s6" refUri="processor_1761">
+                    <ns2:route id="sc9" refUri="processor_1761/output_1763">
+                        <ns2:stitch id="sh9" refUri="processor_1758"/>
+                    </ns2:route>
+                </ns2:router>
+                <ns2:memory id="me7" refUri="processor_1068"/>
+                <ns2:router id="s2" refUri="processor_1102">
+                    <ns2:route id="sc4" refUri="processor_1102/output_1104">
+                        <ns2:memory id="me8" refUri="processor_1113"/>
+                    </ns2:route>
+                    <ns2:route id="sc5" refUri="processor_1102/output_1125">
+                        <ns2:stitch id="sh6" refUri="processor_1145"/>
+                        <ns2:for id="f1" refUri="processor_1148">
+                            <ns2:memory id="me9" refUri="processor_1161"/>
+                            <ns2:stitch id="sh7" refUri="processor_1181"/>
+                            <ns2:transformer id="m1" refUri="processor_1550"/>
+                            <ns2:invoke id="i2" refUri="application_1184" name="Agentic Pattern2"/>
+                            <ns2:router id="s3" refUri="processor_1201">
+                                <ns2:route id="sc6" refUri="processor_1201/output_1203">
+                                    <ns2:transformer id="m3" refUri="processor_1224"/>
+                                    <ns2:invoke id="i3" refUri="application_1212" name="Agentic Pattern3"/>
+                                    <ns2:stop id="st1"/>
+                                </ns2:route>
+                            </ns2:router>
+                            <ns2:memory id="me10" refUri="processor_1229"/>
+                        </ns2:for>
+                    </ns2:route>
+                </ns2:router>
+                <ns2:router id="s4" refUri="processor_1249">
+                    <ns2:route id="sc7" refUri="processor_1249/output_1251">
+                        <ns2:stitch id="sh8" refUri="processor_1260"/>
+                    </ns2:route>
+                </ns2:router>
+            </ns2:while>
+            <ns2:transformer id="m4" refUri="processor_1275"/>
+            <ns2:invoke id="i4" refUri="application_1263" name="Agentic Pattern4" end2EndJsonEnabled="false"/>
+            <ns2:stop id="st0"/>
+        </ns2:orchestration>
+    </ns3:icsflow>
+</ns3:icsproject>

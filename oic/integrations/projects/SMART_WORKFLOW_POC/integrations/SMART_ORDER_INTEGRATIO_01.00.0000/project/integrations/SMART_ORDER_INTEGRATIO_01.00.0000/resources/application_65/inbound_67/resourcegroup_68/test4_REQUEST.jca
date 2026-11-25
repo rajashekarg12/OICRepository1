@@ -1,0 +1,28 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/rpa/test4/types" adapterType="RPA" name="test4_REQUESTPortType" adapter="rpa" wsdlLocation="test4_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.connector.rpa.RPAAdapterConnectionFactory">
+      <property name="applicationVersion" value="1.0"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="test4_REQUESTPortType" operation="ExecuteRPAFlow">
+    <interaction-spec className="oracle.tip.adapter.cloud.CloudInteractionSpec">
+      <property name="targetOperation" value="ExecuteRPAFlow"/>
+      <property name="enforceResponseSizeRestriction" value="true"/>
+      <property name="oic.gen3.invoke" value="true"/>
+      <property name="HttpVerb" value="POST"/>
+      <property name="RequestElementNS" value="http://xmlns.oracle.com/cloud/adapter/rpa/test4/types"/>
+      <property name="RequestElementName" value="RequestWrapper"/>
+      <property name="RequestMediaType" value="application/json"/>
+      <property name="ResourceURI" value="/rpa/v1/internal/orpaInstances/ocid1.orpa-prod.oc1.iad.amaaaaaa5vehu5yasbkzf3kxda7bpczgooh2tjwdszvgay6d2ffuhvi37ywa/flows/project/NOVEMBER_PROJECT_1/WEBNAVIGATORBOT/1"/>
+      <property name="ResponseElementNS" value="http://xmlns.oracle.com/cloud/adapter/rpa/test4/types"/>
+      <property name="ResponseElementName" value="ResponseWrapper"/>
+      <property name="flowEndpoint" value="/flows/project/NOVEMBER_PROJECT_1/WEBNAVIGATORBOT/1"/>
+      <property name="flowId" value="WEBNAVIGATORBOT|01.00.0000"/>
+      <property name="flowName" value="WebNavigatorBot"/>
+      <property name="integrationSchemaNamespace" value="http://xmlns.oracle.com/cloud/adapter/rpa/test4/types"/>
+      <property name="integrationWSDLNamespace" value="http://xmlns.oracle.com/cloud/adapter/rpa/test4"/>
+      <property name="supportEnvExport" value="true"/>
+      <property name="x-rpa-service-instance-id" value="ocid1.orpa-prod.oc1.iad.amaaaaaa5vehu5yasbkzf3kxda7bpczgooh2tjwdszvgay6d2ffuhvi37ywa"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

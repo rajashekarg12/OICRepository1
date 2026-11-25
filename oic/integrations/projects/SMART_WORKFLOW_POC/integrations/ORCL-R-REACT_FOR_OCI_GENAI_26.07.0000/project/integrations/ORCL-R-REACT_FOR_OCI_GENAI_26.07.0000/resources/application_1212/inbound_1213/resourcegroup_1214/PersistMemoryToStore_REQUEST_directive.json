@@ -1,0 +1,32 @@
+{
+  "name" : "PersistMemoryToStore_REQUESTPortType",
+  "adapter" : "oracle:oicpatternadapter",
+  "operation" : "UpdateCacheAction",
+  "endpointType" : "action",
+  "endpointSummary" : "Call OIC Pattern Adapter REST API",
+  "managedConnectionFactoryClassName" : "oracle.cloud.adapter.metadata.MetadataCloudAdapterOutboundConnectionFactory",
+  "connectionProperties" : {
+    "applicationVersion" : "1.0",
+    "RABEngineVersion" : "26.01",
+    "isCollocated" : "true",
+    "systemConnection" : "true",
+    "managedSecurity" : "true",
+    "connectionID" : "PRESEEDED_OIC_PATTERN_1741",
+    "PluginID" : "oracle:oicpatternadapter",
+    "securityPolicy" : "NONE"
+  },
+  "operationProperties" : {
+    "targetOperation" : "UpdateCacheAction",
+    "cloudAdapterName" : "OIC Pattern Adapter",
+    "enforceResponseSizeRestriction" : "true",
+    "isMetadataAdapter" : "true",
+    "generatePartnerLink" : "false",
+    "pluginID" : "oracle:oicpatternadapter",
+    "ADDVersion" : "1.0.5",
+    "action" : "UpdateCacheAction",
+    "vendorName" : "Oracle Corporation",
+    "RequestMediaType" : "application/json",
+    "adapterType" : "APPLICATION",
+    "RequestElementName" : "RequestWrapper"
+  }
+}

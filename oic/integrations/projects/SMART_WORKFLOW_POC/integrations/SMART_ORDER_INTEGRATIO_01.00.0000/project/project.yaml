@@ -1,0 +1,72 @@
+---
+id: SMART_WORKFLOW_POC
+code: SMART_WORKFLOW_POC
+name: Smart Workflow POC
+description: only for for Testing
+mcpEnabled: false
+type: DEVELOPED
+smartTags:
+- "app:rest, app:appevent, app:rpa, app:oracle:opa-decision,style:app driven orchestration"
+revision: 0
+projectRevision: 106
+status: CONFIGURED
+createdBy: rajashekar.gaddi@flexagon.com
+createdDate: 2026-11-23T04:45:03.059+0000
+updatedBy: rajashekar.gaddi@flexagon.com
+updatedDate: 2026-11-23T04:45:03.059+0000
+latestBy: avnish.patel@flexagon.com
+latestDate: 2026-11-25T04:35:24.887+0000
+CAV: 1
+simplifiedMode: false
+assets:
+  integrations:
+  - id: SMART_ORDER_INTEGRATIO|01.00.0000
+    name: Smart Order Integration
+    revision: 0
+    updatedBy: rajashekar.gaddi@flexagon.com
+    updatedDate: 2026-11-23T04:46:45.658+0000
+  connections:
+  - id: ALLCONNECTION2
+    name: AllConnection2
+    revision: 0
+    updatedBy: rajashekar.gaddi@flexagon.com
+    updatedDate: 2026-11-23T04:45:01.620+0000
+  - id: APPLICATION_EVENT_CONNECTION
+    name: APPLICATION_EVENT_CONNECTION
+    revision: 0
+    updatedBy: Jay-Ar.Brouillard@flexagon.com
+    updatedDate: 2023-05-17T17:12:37.529+0000
+  - id: DECISION_SERVICE_NATIVE_CONN
+    name: DECISION_SERVICE_NATIVE_CONN
+    revision: 0
+    updatedBy: erick.jones@flexagon.com
+    updatedDate: 2025-07-28T12:24:27.846+0000
+  - id: PRESEEDED_OIC_RPA_CONN_1741
+    name: OIC_RPA_CONNECTION
+    revision: 0
+    updatedBy: erick.jones@flexagon.com
+    updatedDate: 2024-02-29T17:24:13.655+0000
+  lookups:
+  - id: Mangolookup
+    name: Mangolookup
+    revision: 0
+    updatedBy: rajashekar.gaddi@flexagon.com
+    updatedDate: 2026-11-23T04:45:03.059+0000
+  eventtypes:
+  - id: MYTESTEVENT|1
+    name: mytestEvent
+  libraries:
+  - id: CONVERTTOOLARRAYFROMOPENAITOGENN|01.00.0000
+    name: convertToolArrayFromOpenAItoGenNew
+    revision: 1
+    updatedBy: rajashekar.gaddi@flexagon.com
+    updatedDate: 2026-11-24T09:46:08.859+0000
+  labels:
+  - id: FD_1.0.3.DEFAULT_1795581324713
+    name: FD_1.0.3.default_1795581324713
+    revision: 0
+    updatedBy: avnish.patel@flexagon.com
+    updatedDate: 2026-11-25T04:35:24.887+0000
+origin:
+  tenantOCID: ocid1.tenancy.oc1..aaaaaaaahpnjx74d6mrng7xemyfnbfaxdzhlgdpoxfxmrwivslyktofveiwq
+  serviceInstanceOCID: ocid1.integrationinstance.oc1.iad.amaaaaaavtuicmqa22bei2i6w2uovbbnwoksgxuhuwhjifpl6xinh3hqwmnq

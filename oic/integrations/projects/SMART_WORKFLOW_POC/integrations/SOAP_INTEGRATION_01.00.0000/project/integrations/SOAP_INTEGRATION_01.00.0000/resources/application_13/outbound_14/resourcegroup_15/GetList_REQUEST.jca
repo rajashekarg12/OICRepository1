@@ -1,0 +1,27 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/soap/GetList_REQUEST/types" name="TestPortType" adapter="soap" wsdlLocation="GetList_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.soap.SoapConnectionFactory">
+      <property name="applicationVersion" value="1_0"/>
+      <property name="cloud.adapter.plugin.version" value="26.10.0"/>
+      <property name="cloud.adapter.sdk.version" value="26.10.0"/>
+      <property name="managedSecurity" value="true"/>
+      <property name="privateEndpoint" value="false"/>
+      <property name="security" value="ics/wss_http_token_or_jwt_token_service_policy"/>
+      <property name="targetWSDLURL" value="%%SOAPTEST_targetWSDLURL"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-activation portType="TestPortType" operation="SayHello Qa">
+    <activation-spec className="oracle.tip.adapter.cloud.CloudActivationSpec">
+      <property name="targetOperation" value="SayHello Qa"/>
+      <property name="operationPath" value="http://www.example.org/TestService/SayHello"/>
+      <property name="disableSoapActionValidation" value="No"/>
+      <property name="dynamicInvokeEnabled" value="false"/>
+      <property name="generatePartnerLink" value="false"/>
+      <property name="jcaTransportEnabled" value="true"/>
+      <property name="skipAttachmentProcessing" value="true"/>
+      <property name="targetInvocationStyle" value="REQUEST_RESPONSE"/>
+      <property name="targetOperation" value="SayHello Qa"/>
+      <property name="targetPortType" value="TestPortType"/>
+    </activation-spec>
+  </endpoint-activation>
+</adapter-config>

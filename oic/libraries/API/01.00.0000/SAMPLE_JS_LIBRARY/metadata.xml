@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<api-library>
+    <name>Sample JS Library</name>
+    <code>SAMPLE_JS_LIBRARY</code>
+    <version>01.00.0000</version>
+    <implementationType>JAVASCRIPT</implementationType>
+    <sources>
+        <source>
+            <apiIdList>SAMPLE_JS_LIBRARY:01.00.0000:Sample JS Library.js:parseDate:d</apiIdList>
+            <fileName>Sample JS Library.js</fileName>
+            <apiDefinitions>
+                <api apiid="SAMPLE_JS_LIBRARY:01.00.0000:Sample JS Library.js:add:param1:param2">
+                    <duplicateFnFlag>false</duplicateFnFlag>
+                    <name>add</name>
+                    <inputParameters>
+                        <input>
+                            <icon>/oracle/ics/webconsole/view/images/string_24_ena.png</icon>
+                            <name>param1</name>
+                            <type>string</type>
+                        </input>
+                        <input>
+                            <icon>/oracle/ics/webconsole/view/images/string_24_ena.png</icon>
+                            <name>param2</name>
+                            <type>string</type>
+                        </input>
+                    </inputParameters>
+                    <libraryCode>SAMPLE_JS_LIBRARY</libraryCode>
+                    <unsupportedSyntax>true</unsupportedSyntax>
+                    <unsupportedSyntaxType>Unsuported syntax. Return parameter must be named.</unsupportedSyntaxType>
+                </api>
+                <api apiid="SAMPLE_JS_LIBRARY:01.00.0000:Sample JS Library.js:parseDate:d">
+                    <classification>ORCHESTRATION</classification>
+                    <duplicateFnFlag>false</duplicateFnFlag>
+                    <name>parseDate</name>
+                    <inputParameters>
+                        <input>
+                            <icon>/oracle/ics/webconsole/view/images/string_24_ena.png</icon>
+                            <name>d</name>
+                            <type>string</type>
+                        </input>
+                    </inputParameters>
+                    <libraryCode>SAMPLE_JS_LIBRARY</libraryCode>
+                    <classification>ORCHESTRATION</classification>
+                    <classification>XPATH</classification>
+                    <outputParameters>
+                        <output>
+                            <icon>/oracle/ics/webconsole/view/images/string_24_ena.png</icon>
+                            <name>retVal</name>
+                            <type>string</type>
+                        </output>
+                    </outputParameters>
+                    <unsupportedSyntax>false</unsupportedSyntax>
+                </api>
+            </apiDefinitions>
+            <libraryCode>SAMPLE_JS_LIBRARY</libraryCode>
+            <path>/tmp/WC/Sample JS Library/Sample JS Library.js</path>
+        </source>
+    </sources>
+</api-library>

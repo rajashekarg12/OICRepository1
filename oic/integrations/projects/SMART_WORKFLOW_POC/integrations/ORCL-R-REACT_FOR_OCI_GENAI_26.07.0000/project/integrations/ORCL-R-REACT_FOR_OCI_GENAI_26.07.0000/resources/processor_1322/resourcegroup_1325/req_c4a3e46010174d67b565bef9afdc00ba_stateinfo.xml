@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<oracle-xsl-webmapper:StateInfo xmlns:oracle-xsl-webmapper="http://www.oracle.com/xsl/webmapper/state" version="1.1">
+    <oracle-xsl-webmapper:ErrorsCount>0</oracle-xsl-webmapper:ErrorsCount>
+    <oracle-xsl-webmapper:WarningsCount>0</oracle-xsl-webmapper:WarningsCount>
+    <oracle-xsl-webmapper:IsImported>false</oracle-xsl-webmapper:IsImported>
+    <oracle-xsl-webmapper:HasMappings>true</oracle-xsl-webmapper:HasMappings>
+    <oracle-xsl-webmapper:StateInfoIsStale>false</oracle-xsl-webmapper:StateInfoIsStale>
+    <oracle-xsl-webmapper:SourcesReferenced>
+        <element xmlns:ns3="http://xmlns.oracle.com/cloud/adapter/REST/runagenticreactpattern_REQUEST/types">ns3:execute</element>
+        <uriAbsoluteLocation>file:/tmp/WC/itg_72af71a6-c589-4994-a271-97a71e61367f/resources/application_18/outbound_19/resourcegroup_20/runagenticreactpattern_REQUEST.wsdl</uriAbsoluteLocation>
+        <primary>true</primary>
+    </oracle-xsl-webmapper:SourcesReferenced>
+    <oracle-xsl-webmapper:SourcesReferenced>
+        <element xmlns:ns3="http://www.oracle.com/2014/03/ic/integration/pattern/memory">ns3:memories</element>
+        <uriAbsoluteLocation>file:/tmp/WC/itg_72af71a6-c589-4994-a271-97a71e61367f/resources/processor_6/resourcegroup_7/PatternIntegrationMemory.xsd</uriAbsoluteLocation>
+        <param>Memory_arr_var</param>
+        <primary>false</primary>
+    </oracle-xsl-webmapper:SourcesReferenced>
+    <oracle-xsl-webmapper:SourcesReferenced>
+        <element xmlns:ns3="http://xmlns.oracle.com/cloud/adapter/REST/runagenticreactpattern/types">ns3:patternRoles</element>
+        <uriAbsoluteLocation>file:/tmp/WC/itg_72af71a6-c589-4994-a271-97a71e61367f/resources/processor_819/resourcegroup_822/generated.wsdl</uriAbsoluteLocation>
+        <param>pattern_var</param>
+        <primary>false</primary>
+    </oracle-xsl-webmapper:SourcesReferenced>
+    <oracle-xsl-webmapper:AllSources>
+        <element xmlns:ns3="http://xmlns.oracle.com/cloud/adapter/REST/runagenticreactpattern_REQUEST/types">ns3:execute</element>
+        <uriAbsoluteLocation>file:/tmp/WC/itg_72af71a6-c589-4994-a271-97a71e61367f/resources/application_18/outbound_19/resourcegroup_20/runagenticreactpattern_REQUEST.wsdl</uriAbsoluteLocation>
+        <primary>true</primary>
+    </oracle-xsl-webmapper:AllSources>
+    <oracle-xsl-webmapper:AllSources>
+        <element xmlns:ns3="http://www.oracle.com/2014/03/ic/integration/pattern/memory">ns3:memories</element>
+        <uriAbsoluteLocation>file:/tmp/WC/itg_72af71a6-c589-4994-a271-97a71e61367f/resources/processor_6/resourcegroup_7/PatternIntegrationMemory.xsd</uriAbsoluteLocation>
+        <param>Memory_arr_var</param>
+        <primary>false</primary>
+    </oracle-xsl-webmapper:AllSources>
+    <oracle-xsl-webmapper:AllSources>
+        <element xmlns:ns3="http://xmlns.oracle.com/cloud/adapter/REST/runagenticreactpattern/types">ns3:patternRoles</element>
+        <uriAbsoluteLocation>file:/tmp/WC/itg_72af71a6-c589-4994-a271-97a71e61367f/resources/processor_819/resourcegroup_822/generated.wsdl</uriAbsoluteLocation>
+        <param>pattern_var</param>
+        <primary>false</primary>
+    </oracle-xsl-webmapper:AllSources>
+    <oracle-xsl-webmapper:LookupTablesReferenced>OCIGenAI_Properties</oracle-xsl-webmapper:LookupTablesReferenced>
+    <oracle-xsl-webmapper:TrackedFunctionsReferenced>
+        <category>User_Defined</category>
+        <functionName>convertToolArrayFromOpenAItoGenAINew</functionName>
+        <functionNamespace>http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.JsExecutor_xpath2078314881</functionNamespace>
+        <functionTestableDesignTime>true</functionTestableDesignTime>
+        <functionTracked>false</functionTracked>
+        <hasRepeatingParam>false</hasRepeatingParam>
+        <lookupFunction>false</lookupFunction>
+        <mandatoryParamCount>0</mandatoryParamCount>
+        <optionalParamCount>0</optionalParamCount>
+        <parameterPositionOfLookupTable>0</parameterPositionOfLookupTable>
+    </oracle-xsl-webmapper:TrackedFunctionsReferenced>
+</oracle-xsl-webmapper:StateInfo>

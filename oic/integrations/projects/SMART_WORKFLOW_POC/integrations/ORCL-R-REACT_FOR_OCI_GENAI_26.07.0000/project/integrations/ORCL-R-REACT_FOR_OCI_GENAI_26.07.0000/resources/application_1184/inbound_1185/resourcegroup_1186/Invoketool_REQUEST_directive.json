@@ -1,0 +1,34 @@
+{
+  "name" : "Invoketool_REQUESTPortType",
+  "adapter" : "oracle:oicpatternadapter",
+  "operation" : "InvokeToolFlowAction",
+  "endpointType" : "action",
+  "endpointSummary" : "Call OIC Pattern Adapter REST API",
+  "managedConnectionFactoryClassName" : "oracle.cloud.adapter.metadata.MetadataCloudAdapterOutboundConnectionFactory",
+  "connectionProperties" : {
+    "applicationVersion" : "1.0",
+    "RABEngineVersion" : "26.01",
+    "isCollocated" : "true",
+    "systemConnection" : "true",
+    "managedSecurity" : "true",
+    "connectionID" : "PRESEEDED_OIC_PATTERN_1741",
+    "PluginID" : "oracle:oicpatternadapter",
+    "securityPolicy" : "NONE"
+  },
+  "operationProperties" : {
+    "targetOperation" : "InvokeToolFlowAction",
+    "enforceResponseSizeRestriction" : "true",
+    "pluginID" : "oracle:oicpatternadapter",
+    "ADDVersion" : "1.0.5",
+    "vendorName" : "Oracle Corporation",
+    "ResponseMediaType" : "application/json",
+    "adapterType" : "APPLICATION",
+    "RequestElementName" : "RequestWrapper",
+    "cloudAdapterName" : "OIC Pattern Adapter",
+    "isMetadataAdapter" : "true",
+    "ResponseElementName" : "ResponseWrapper",
+    "generatePartnerLink" : "false",
+    "action" : "InvokeToolFlowAction",
+    "RequestMediaType" : "application/json"
+  }
+}

@@ -1,0 +1,55 @@
+---
+id: SMART_WORKFLOW_POC
+code: SMART_WORKFLOW_POC
+name: Smart Workflow POC
+description: only for for Testing
+mcpEnabled: false
+type: DEVELOPED
+smartTags:
+- app:oracle:oicpatternadapter
+- style:app driven orchestration
+- app:oracle:openai
+- app:rest
+revision: 0
+projectRevision: 110
+status: CONFIGURED
+createdBy: rajashekar.gaddi@flexagon.com
+createdDate: 2026-11-23T04:45:03.059+0000
+updatedBy: rajashekar.gaddi@flexagon.com
+updatedDate: 2026-11-23T04:45:03.059+0000
+latestBy: avnish.patel@flexagon.com
+latestDate: 2026-11-25T04:35:29.829+0000
+CAV: 1
+simplifiedMode: false
+assets:
+  integrations:
+  - id: ORCL-R-PLAN_PATTERN|26.07.0000
+    name: Plan Pattern
+    revision: 0
+    updatedBy: rajashekar.gaddi@flexagon.com
+    updatedDate: 2026-11-23T04:45:03.059+0000
+  connections:
+  - id: LLM_CONNECTION
+    name: LLM_Connection
+    revision: 0
+    updatedBy: rajashekar.gaddi@flexagon.com
+    updatedDate: 2026-11-23T04:45:01.617+0000
+  - id: PRESEEDED_OIC_PATTERN_1741
+    name: PRESEEDED_OIC_PATTERN_1741
+    revision: 0
+    updatedBy: erick.jones@flexagon.com
+    updatedDate: 2025-12-06T15:16:21.321+0000
+  - id: REST_CONNECTION
+    name: REST Connection
+    revision: 0
+    updatedBy: rajashekar.gaddi@flexagon.com
+    updatedDate: 2026-11-23T04:45:01.620+0000
+  labels:
+  - id: FD_1.0.3.DEFAULT_1795581329598
+    name: FD_1.0.3.default_1795581329598
+    revision: 0
+    updatedBy: avnish.patel@flexagon.com
+    updatedDate: 2026-11-25T04:35:29.829+0000
+origin:
+  tenantOCID: ocid1.tenancy.oc1..aaaaaaaahpnjx74d6mrng7xemyfnbfaxdzhlgdpoxfxmrwivslyktofveiwq
+  serviceInstanceOCID: ocid1.integrationinstance.oc1.iad.amaaaaaavtuicmqa22bei2i6w2uovbbnwoksgxuhuwhjifpl6xinh3hqwmnq

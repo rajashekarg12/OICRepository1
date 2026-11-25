@@ -1,0 +1,399 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "call_LLM_REQUEST",
+    "version" : "v01"
+  },
+  "servers" : [ {
+    "url" : "https://si03-manual-l1-dt-dev-axkbv4jfb37h-px-pp.integration.us-phoenix-1.ocp.oraclecloud.com/"
+  } ],
+  "paths" : {
+    "/endpoint/outbound/{endpoint_id}/request" : {
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RequestWrapper"
+              }
+            }
+          },
+          "required" : false
+        },
+        "responses" : {
+          "500" : {
+            "description" : "Faults",
+            "content" : { }
+          },
+          "default" : {
+            "description" : "A sample description of the Response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OpenAiAction_chatCompletionsResponseType"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name" : "RequestWrapper"
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "OpenAiAction_chatCompletionsResponseType" : {
+        "type" : "object",
+        "properties" : {
+          "ResponseWrapper" : {
+            "$ref" : "#/components/schemas/ResponseWrapper"
+          }
+        }
+      },
+      "ResponseWrapper" : {
+        "type" : "object",
+        "properties" : {
+          "body" : {
+            "$ref" : "#/components/schemas/OpenAi0ResponseBodySchema_chatCompletions"
+          }
+        }
+      },
+      "OpenAi0ResponseBodySchema_chatCompletions" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "example" : null
+          },
+          "object" : {
+            "type" : "string",
+            "example" : null
+          },
+          "created_at" : {
+            "type" : "integer",
+            "example" : null
+          },
+          "model" : {
+            "type" : "string",
+            "example" : null
+          },
+          "choices" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/choices_items"
+            }
+          },
+          "service_tier" : {
+            "type" : "string",
+            "example" : null
+          },
+          "usage" : {
+            "$ref" : "#/components/schemas/usage_chatCompletions"
+          }
+        }
+      },
+      "choices_items" : {
+        "type" : "object",
+        "properties" : {
+          "index" : {
+            "type" : "integer",
+            "example" : null
+          },
+          "message" : {
+            "type" : "object",
+            "properties" : {
+              "role" : {
+                "type" : "string",
+                "example" : null
+              },
+              "content" : {
+                "type" : "string",
+                "example" : null
+              },
+              "tool_calls" : {
+                "type" : "array",
+                "items" : {
+                  "$ref" : "#/components/schemas/tool_calls_array"
+                }
+              },
+              "refusal" : {
+                "type" : "string",
+                "example" : null
+              },
+              "audio" : {
+                "type" : "object",
+                "properties" : {
+                  "data" : {
+                    "type" : "string",
+                    "example" : null
+                  },
+                  "expires_at" : {
+                    "type" : "string",
+                    "example" : null
+                  },
+                  "id" : {
+                    "type" : "string",
+                    "example" : null
+                  },
+                  "transcript" : {
+                    "type" : "string",
+                    "example" : null
+                  }
+                },
+                "example" : null
+              },
+              "annotations" : {
+                "type" : "array",
+                "items" : {
+                  "$ref" : "#/components/schemas/annotations_array"
+                }
+              }
+            },
+            "example" : null
+          },
+          "logprobs" : {
+            "type" : "object",
+            "properties" : {
+              "content" : {
+                "type" : "array",
+                "items" : {
+                  "$ref" : "#/components/schemas/logprobs_content_items"
+                }
+              },
+              "refusal" : {
+                "type" : "array",
+                "items" : {
+                  "$ref" : "#/components/schemas/logprobs_content_items"
+                }
+              }
+            },
+            "example" : null
+          },
+          "finish_reason" : {
+            "type" : "string",
+            "example" : null
+          }
+        }
+      },
+      "tool_calls_array" : {
+        "type" : "object",
+        "properties" : {
+          "custom" : {
+            "type" : "string",
+            "example" : null
+          },
+          "id" : {
+            "type" : "string",
+            "example" : null
+          },
+          "type" : {
+            "type" : "string",
+            "example" : null
+          },
+          "function" : {
+            "type" : "object",
+            "properties" : {
+              "name" : {
+                "type" : "string",
+                "example" : null
+              },
+              "arguments" : {
+                "type" : "string",
+                "example" : null
+              }
+            },
+            "example" : null
+          }
+        }
+      },
+      "annotations_array" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : null
+          },
+          "url_citation" : {
+            "type" : "object",
+            "properties" : {
+              "end_index" : {
+                "type" : "string",
+                "example" : null
+              },
+              "start_index" : {
+                "type" : "string",
+                "example" : null
+              },
+              "title" : {
+                "type" : "string",
+                "example" : null
+              },
+              "url" : {
+                "type" : "string",
+                "example" : null
+              }
+            },
+            "example" : null
+          }
+        }
+      },
+      "logprobs_content_items" : {
+        "type" : "object",
+        "properties" : {
+          "bytes" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer",
+              "example" : null
+            }
+          },
+          "logprob" : {
+            "type" : "string",
+            "example" : null
+          },
+          "token" : {
+            "type" : "string",
+            "example" : null
+          },
+          "top_logprobs" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/top_logprobs_array"
+            }
+          }
+        }
+      },
+      "top_logprobs_array" : {
+        "type" : "object",
+        "properties" : {
+          "bytes" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer",
+              "example" : null
+            }
+          },
+          "logprob" : {
+            "type" : "string",
+            "example" : null
+          },
+          "token" : {
+            "type" : "string",
+            "example" : null
+          }
+        }
+      },
+      "usage_chatCompletions" : {
+        "type" : "object",
+        "properties" : {
+          "prompt_tokens" : {
+            "type" : "integer",
+            "example" : null
+          },
+          "completion_tokens" : {
+            "type" : "integer",
+            "example" : null
+          },
+          "prompt_tokens_details" : {
+            "$ref" : "#/components/schemas/prompt_tokens_details"
+          },
+          "completion_tokens_details" : {
+            "$ref" : "#/components/schemas/completion_tokens_details"
+          },
+          "total_tokens" : {
+            "type" : "integer",
+            "example" : null
+          }
+        }
+      },
+      "prompt_tokens_details" : {
+        "type" : "object",
+        "properties" : {
+          "cached_tokens" : {
+            "type" : "integer",
+            "example" : null
+          },
+          "audio_tokens" : {
+            "type" : "integer",
+            "example" : null
+          }
+        }
+      },
+      "completion_tokens_details" : {
+        "type" : "object",
+        "properties" : {
+          "reasoning_tokens" : {
+            "type" : "integer",
+            "example" : null
+          },
+          "accepted_prediction_tokens" : {
+            "type" : "integer",
+            "example" : null
+          },
+          "rejected_prediction_tokens" : {
+            "type" : "integer",
+            "example" : null
+          },
+          "audio_tokens" : {
+            "type" : "integer",
+            "example" : null
+          }
+        }
+      },
+      "APIInvocationError" : {
+        "required" : [ "detail", "errorCode", "errorDetails", "title", "type" ],
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : null
+          },
+          "title" : {
+            "type" : "string",
+            "example" : null
+          },
+          "detail" : {
+            "type" : "string",
+            "example" : null
+          },
+          "errorCode" : {
+            "type" : "string",
+            "example" : null
+          },
+          "errorDetails" : {
+            "minItems" : 1,
+            "type" : "array",
+            "items" : {
+              "required" : [ "errorCode", "errorPath", "instance", "title", "type" ],
+              "type" : "object",
+              "properties" : {
+                "type" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "instance" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "title" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "errorPath" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "errorCode" : {
+                  "type" : "string",
+                  "example" : null
+                }
+              },
+              "example" : null
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-original-swagger-version" : "2.0"
+}

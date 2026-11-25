@@ -1,0 +1,38 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/oracle:opa-decision/dd/types" name="dd_REQUESTPortType" adapter="oracle:opa-decision" wsdlLocation="dd_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.adapter.metadata.MetadataCloudAdapterOutboundConnectionFactory">
+      <property name="PluginID" value="oracle:opa-decision"/>
+      <property name="RABEngineVersion" value="26.10.0.8"/>
+      <property name="applicationVersion" value="1.0"/>
+      <property name="connectionID" value="DECISION_SERVICE_NATIVE_CONN"/>
+      <property name="instanceURL" value="%%DECISION_SERVICE_NATIVE_CONN_instanceURL"/>
+      <property name="managedSecurity" value="true"/>
+      <property name="securityPolicy" value="LOCAL_IDCS_CLIENT_CREDENTIALS"/>
+      <property name="systemConnection" value="true"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="dd_REQUESTPortType" operation="postDecisionAction">
+    <interaction-spec className="oracle.tip.adapter.cloud.CloudInteractionSpec">
+      <property name="targetOperation" value="postDecisionAction"/>
+      <property name="enforceResponseSizeRestriction" value="true"/>
+      <property name="oic.gen3.invoke" value="true"/>
+      <property name="ADDVersion" value="1.0.2"/>
+      <property name="RequestElementNS" value="http://xmlns.oracle.com/cloud/adapter/oracle:opa-decision/dd/types"/>
+      <property name="RequestElementName" value="RequestWrapper"/>
+      <property name="RequestMediaType" value="application/json"/>
+      <property name="ResponseElementNS" value="http://xmlns.oracle.com/cloud/adapter/oracle:opa-decision/dd/types"/>
+      <property name="ResponseElementName" value="ResponseWrapper"/>
+      <property name="ResponseMediaType" value="application/json"/>
+      <property name="action" value="postDecisionAction"/>
+      <property name="adapterType" value="APPLICATION"/>
+      <property name="cloudAdapterName" value="Process Automation Decision Service"/>
+      <property name="configuration" value="{&quot;versionId&quot;:&quot;01.00.0000&quot;,&quot;parsedUrl&quot;:&quot;/decision-models/OIC-%CURRENT_PROJECT_ID%-Decision1/versions/01.00.0000/active/definition/decision-services/Decissionservice&quot;,&quot;applicationId&quot;:&quot;Decision1&quot;,&quot;serviceId&quot;:&quot;Decissionservice&quot;,&quot;projectId&quot;:&quot;%CURRENT_PROJECT_ID%&quot;}"/>
+      <property name="generatePartnerLink" value="false"/>
+      <property name="integrationSchemaNamespace" value="http://xmlns.oracle.com/cloud/adapter/oracle:opa-decision/dd/types"/>
+      <property name="integrationWSDLNamespace" value="http://xmlns.oracle.com/cloud/adapter/oracle:opa-decision/dd"/>
+      <property name="isMetadataAdapter" value="true"/>
+      <property name="pluginID" value="oracle:opa-decision"/>
+      <property name="vendorName" value="Oracle Corporation"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

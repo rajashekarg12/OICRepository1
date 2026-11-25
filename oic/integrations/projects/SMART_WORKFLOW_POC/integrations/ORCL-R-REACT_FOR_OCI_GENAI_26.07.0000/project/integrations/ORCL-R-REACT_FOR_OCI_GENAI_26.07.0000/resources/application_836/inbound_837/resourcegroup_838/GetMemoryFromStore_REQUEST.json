@@ -1,0 +1,171 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "GetMemoryFromStore_REQUEST",
+    "version" : "v01"
+  },
+  "servers" : [ {
+    "url" : "https://si03-manual-l1-dt-dev-axkbv4jfb37h-px-pp.integration.us-phoenix-1.ocp.oraclecloud.com/"
+  } ],
+  "paths" : {
+    "/endpoint/outbound/{endpoint_id}/request" : {
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RequestWrapper"
+              }
+            }
+          },
+          "required" : false
+        },
+        "responses" : {
+          "500" : {
+            "description" : "Faults",
+            "content" : { }
+          },
+          "default" : {
+            "description" : "A sample description of the Response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/GetCacheActionResponseType"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name" : "RequestWrapper"
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "GetCacheActionResponseType" : {
+        "type" : "object",
+        "properties" : {
+          "ResponseWrapper" : {
+            "$ref" : "#/components/schemas/ResponseWrapper"
+          }
+        }
+      },
+      "ResponseWrapper" : {
+        "type" : "object",
+        "properties" : {
+          "body" : {
+            "$ref" : "#/components/schemas/GetCache0ResponseBodySchema"
+          }
+        }
+      },
+      "GetCache0ResponseBodySchema" : {
+        "type" : "object",
+        "properties" : {
+          "messages" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "role" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "content" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "id" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "type" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "status" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "arguments" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "call_id" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "name" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "output" : {
+                  "type" : "string",
+                  "example" : null
+                }
+              },
+              "example" : null
+            }
+          },
+          "tools" : {
+            "type" : "string",
+            "example" : null
+          }
+        }
+      },
+      "APIInvocationError" : {
+        "required" : [ "detail", "errorCode", "errorDetails", "title", "type" ],
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : null
+          },
+          "title" : {
+            "type" : "string",
+            "example" : null
+          },
+          "detail" : {
+            "type" : "string",
+            "example" : null
+          },
+          "errorCode" : {
+            "type" : "string",
+            "example" : null
+          },
+          "errorDetails" : {
+            "minItems" : 1,
+            "type" : "array",
+            "items" : {
+              "required" : [ "errorCode", "errorPath", "instance", "title", "type" ],
+              "type" : "object",
+              "properties" : {
+                "type" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "instance" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "title" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "errorPath" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "errorCode" : {
+                  "type" : "string",
+                  "example" : null
+                }
+              },
+              "example" : null
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-original-swagger-version" : "2.0"
+}

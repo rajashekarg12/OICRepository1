@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:icsproject name="project_1" version="10.1" cversion="6" modelType="freeform" xmlns="http://www.oracle.com/2014/03/ics/flow/definition" xmlns:ns2="http://www.oracle.com/2014/03/ics/project/definition" xmlns:ns3="http://www.oracle.com/2014/03/ics/project">
+    <ns2:projectCode>RGTEST</ns2:projectCode>
+    <ns2:projectVersion>01.00.0001</ns2:projectVersion>
+    <ns2:projectName>RGTest</ns2:projectName>
+    <ns2:percentComplete>100</ns2:percentComplete>
+    <ns2:projectHasErrors>false</ns2:projectHasErrors>
+    <ns2:projectHasWarnings>true</ns2:projectHasWarnings>
+    <ns3:icsflow name="flow_1">
+        <application name="application_8">
+            <role>source</role>
+            <adapter>
+                <type>app-adapter</type>
+                <code>MY_REST_ENDPOINT_INTERFAC</code>
+                <name>helloWorld</name>
+                <property name="hasAttachment" value="false"/>
+            </adapter>
+            <mep>push-sync</mep>
+            <outbound name="outbound_9">
+                <binding>rest</binding>
+                <operation>execute</operation>
+                <resourceGroup name="resourcegroup_10">
+                    <resource name="resource_12" location="../resources/application_8/outbound_9/resourcegroup_10/helloWorld_REQUEST.wsdl" type="wsdl"/>
+                    <resource name="resource_1033" location="../resources/application_8/outbound_9/resourcegroup_10/helloWorld_REQUEST.jca" type="jca"/>
+                </resourceGroup>
+                <input name="input_14">
+                    <role>response</role>
+                    <messageContextRef refUri="messagecontext_13"/>
+                </input>
+                <input name="input_18">
+                    <role>fault</role>
+                    <subRole>APIInvocationError</subRole>
+                    <messageContextRef refUri="messagecontext_17"/>
+                </input>
+                <output name="output_16">
+                    <role>request</role>
+                    <messageContextRef refUri="messagecontext_15"/>
+                </output>
+            </outbound>
+        </application>
+        <application name="application_1184">
+            <role>target</role>
+            <adapter>
+                <type>app-adapter</type>
+                <code>SOAP_TEST</code>
+                <name>hellotest</name>
+                <property name="hasAttachment" value="false"/>
+            </adapter>
+            <mep>push-sync</mep>
+            <inbound name="inbound_1185">
+                <operation>SayHello</operation>
+                <resourceGroup name="resourcegroup_1186">
+                    <resource name="resource_1187" location="../resources/application_1184/inbound_1185/resourcegroup_1186/hellotest_REQUEST.jca" type="jca"/>
+                    <resource name="resource_1188" location="../resources/application_1184/inbound_1185/resourcegroup_1186/ICSFault.xsd" type="xsd"/>
+                    <resource name="resource_1189" location="../resources/application_1184/inbound_1185/resourcegroup_1186/hellotest_REQUEST.wsdl" type="wsdl"/>
+                </resourceGroup>
+                <input name="input_1191">
+                    <role>request</role>
+                    <messageContextRef refUri="messagecontext_1190"/>
+                </input>
+                <output name="output_1193">
+                    <role>response</role>
+                    <messageContextRef refUri="messagecontext_1192"/>
+                </output>
+            </inbound>
+        </application>
+        <processor name="processor_1049">
+            <type>messageTracker</type>
+            <role>messageTracker:global</role>
+            <trackingVariableGroup>
+                <trackingVariable>
+                    <role>tracking_var_1</role>
+                    <primary>true</primary>
+                    <name>name</name>
+                    <xpath>/execute/TemplateParameters/name</xpath>
+                    <messageContextRef refUri="messagecontext_15"/>
+                    <output name="output_1051">
+                        <messageContextRef refUri="messagecontext_1050"/>
+                    </output>
+                </trackingVariable>
+                <trackingVariable>
+                    <role>tracking_var_2</role>
+                    <primary>false</primary>
+                    <name>tracking_var_2</name>
+                    <messageContextRef refUri="messagecontext_15"/>
+                    <output name="output_1053">
+                        <messageContextRef refUri="messagecontext_1052"/>
+                    </output>
+                </trackingVariable>
+                <trackingVariable>
+                    <role>tracking_var_3</role>
+                    <primary>false</primary>
+                    <name>tracking_var_3</name>
+                    <messageContextRef refUri="messagecontext_15"/>
+                    <output name="output_1055">
+                        <messageContextRef refUri="messagecontext_1054"/>
+                    </output>
+                </trackingVariable>
+            </trackingVariableGroup>
+        </processor>
+        <processor name="processor_1170">
+            <type>integrationMetadata</type>
+            <role>undefined</role>
+            <resourceGroup name="resourcegroup_1171">
+                <resource name="resource_1172" location="../resources/processor_1170/resourcegroup_1171/ICSIntegrationMetadata.xsd" type="xsd"/>
+            </resourceGroup>
+            <output name="output_1174">
+                <messageContextRef refUri="messagecontext_1173"/>
+            </output>
+        </processor>
+        <processor name="processor_1175">
+            <type>integrationProperties</type>
+            <role>undefined</role>
+            <resourceGroup name="resourcegroup_1176">
+                <resource name="resource_1177" location="../resources/processor_1175/resourcegroup_1176/ICSIntegrationProperties.xsd" type="xsd"/>
+            </resourceGroup>
+            <resourceGroup name="resourcegroup_1180">
+                <role>exprBuilderProperties</role>
+                <resource name="resource_1181" location="../resources/processor_1175/resourcegroup_1180/integration_property_2expr.properties" type="properties">
+                    <role>integration_property_2</role>
+                </resource>
+                <resource name="resource_1182" location="../resources/processor_1175/resourcegroup_1180/integration_property_1expr.properties" type="properties">
+                    <role>integration_property_1</role>
+                </resource>
+                <resource name="resource_1183" location="../resources/processor_1175/resourcegroup_1180/integration_property_3expr.properties" type="properties">
+                    <role>integration_property_3</role>
+                </resource>
+            </resourceGroup>
+            <output name="output_1179">
+                <messageContextRef refUri="messagecontext_1178"/>
+            </output>
+        </processor>
+        <processor name="processor_1194">
+            <type>transformer</type>
+            <role>transformer:response-map</role>
+            <resourceGroup name="resourcegroup_1197">
+                <resource name="resource_1198" location="../resources/processor_1194/resourcegroup_1197/req_9a7a6a4841a94dbf99ca35c5da849554.xsl" type="xslt"/>
+            </resourceGroup>
+            <input name="input_1195">
+                <messageContextRef refUri="messagecontext_15"/>
+            </input>
+            <output name="output_1196">
+                <messageContextRef refUri="messagecontext_1190"/>
+            </output>
+            <property name="has-mappings" value="false"/>
+        </processor>
+        <messageContext name="messagecontext_2">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_4">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_6">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_13">
+            <resourceRef refUri="application_8/outbound_9/resourcegroup_10/resource_12"/>
+            <rootElement elementName="executeResponse" namespace="http://xmlns.oracle.com/cloud/adapter/REST/helloWorld_REQUEST/types"/>
+            <wsdlMessage messageName="executeResponseMessage" namespace="http://xmlns.oracle.com/cloud/adapter/REST/helloWorld_REQUEST" partName="parameters"/>
+        </messageContext>
+        <messageContext name="messagecontext_15">
+            <resourceRef refUri="application_8/outbound_9/resourcegroup_10/resource_12"/>
+            <rootElement elementName="execute" namespace="http://xmlns.oracle.com/cloud/adapter/REST/helloWorld_REQUEST/types"/>
+            <wsdlMessage messageName="executeRequestMessage" namespace="http://xmlns.oracle.com/cloud/adapter/REST/helloWorld_REQUEST" partName="parameters"/>
+        </messageContext>
+        <messageContext name="messagecontext_17">
+            <resourceRef refUri="application_8/outbound_9/resourcegroup_10/resource_12"/>
+            <rootElement elementName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/generic/rest/fault/REST/helloWorld"/>
+            <wsdlMessage messageName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/REST/helloWorld_REQUEST" partName="parameters"/>
+            <wsdlFault faultName="APIInvocationError" namespace="http://xmlns.oracle.com/cloud/adapter/REST/helloWorld_REQUEST"/>
+        </messageContext>
+        <messageContext name="messagecontext_281">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_283">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_285">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_405">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_407">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_409">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_1050">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_1052">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_1054">
+            <rootElement elementName="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+        </messageContext>
+        <messageContext name="messagecontext_1173">
+            <resourceRef refUri="processor_1170/resourcegroup_1171/resource_1172"/>
+            <rootElement elementName="metadata" namespace="http://www.oracle.com/2014/03/ic/integration/metadata"/>
+        </messageContext>
+        <messageContext name="messagecontext_1178">
+            <resourceRef refUri="processor_1175/resourcegroup_1176/resource_1177"/>
+            <rootElement elementName="properties" namespace="http://www.oracle.com/2014/03/ic/integration/properties"/>
+        </messageContext>
+        <messageContext name="messagecontext_1190">
+            <resourceRef refUri="application_1184/inbound_1185/resourcegroup_1186/resource_1189"/>
+            <rootElement elementName="OutboundSOAPRequestDocument" namespace="http://xmlns.oracle.com/types/hellotest/1774614869287/OutboundSOAPRequestDocument"/>
+            <wsdlMessage messageName="HelloRequest" namespace="http://www.example.org/TestService/" partName="parameters"/>
+        </messageContext>
+        <messageContext name="messagecontext_1192">
+            <resourceRef refUri="application_1184/inbound_1185/resourcegroup_1186/resource_1189"/>
+            <rootElement elementName="Response" namespace="http://www.example.org/TestService/"/>
+            <wsdlMessage messageName="HelloResponse" namespace="http://www.example.org/TestService/" partName="parameters"/>
+        </messageContext>
+        <commonNamespaceMaps/>
+        <orchestration>
+            <integrationMetadata id="im0" refUri="processor_1170"/>
+            <integrationProperties id="ip0" refUri="processor_1175"/>
+            <receive trackingRefUri="processor_1049" id="r0" refUri="application_8/outbound_9/output_16"/>
+            <transformer id="m0" refUri="processor_1194"/>
+            <invoke id="i0" refUri="application_1184" name="SOAP1" end2EndJsonEnabled="false"/>
+            <reply id="y0" refUri="application_8/outbound_9/input_14"/>
+        </orchestration>
+    </ns3:icsflow>
+</ns3:icsproject>

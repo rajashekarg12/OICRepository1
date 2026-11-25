@@ -1,0 +1,40 @@
+{
+  "name" : "runagenticreactpattern_REQUESTPortType",
+  "adapter" : "REST",
+  "operation" : "execute",
+  "endpointType" : "trigger",
+  "endpointSummary" : "Trigger OIC REST Integration: Post /start/",
+  "managedConnectionFactoryClassName" : "oracle.cloud.connector.rest.RestAdapterConnectionFactory",
+  "connectionProperties" : {
+    "security" : "oracle/multi_token_rest_service_policy",
+    "rest.inbound.security.configurable" : "true",
+    "cloud.adapter.sdk.version" : "25.06.0",
+    "securityPolicy" : "MULTI_TOKEN_INBOUND",
+    "cloud.adapter.plugin.version" : "25.06.0"
+  },
+  "operationProperties" : {
+    "targetOperation" : "execute",
+    "RequestSample" : "{\n  \"prompt\" : \"shruhtilaya!!!\",\n  \"agentRole\" : \"Your role is to say hello to users\",\n  \"agentGuideline\" : \"Call the hello tool with the input name and respond the user with the hello greetings returned by the tool\",\n  \"patternRoles\" : [ {\n    \"patternRole\" : \"Default\",\n    \"patternGuideline\" : \"- Strictly follow all guidelines. It is mandatory that you reflect on all guidelines provided.\\n1. You should follow the ReAct agent pattern (Reason + Act) when generating a response.\\nPattern:\\n-- Think - using your internal reasoning.\\n-- Action - Invoke tools to get information, including additional human input.\\n-- Observe - Process tool response using your internal reasoning.\\n-- Repeat - Repeat until finished.\\n2. At each step you provide your think, action, and observe rationale.\\n3. You should always attempt to get the most relevant information based on tool use.\\n4. Do not guess or infer tool arguments except for the following reasons:\\n- You are given specific guidance by the tool on inferring a tool argument.\\n- You have previous context to make a reasonable assumption.\\n\",\n    \"patternMaxIteration\" : 10,\n    \"patternTemperature\" : 0.5,\n    \"toolJsonString\" : \"[{\\\"type\\\":\\\"function\\\",\\\"function\\\":{\\\"name\\\":\\\"Hello Tool\\\",\\\"description\\\":\\\"Hello Tool \\\",\\\"parameters\\\":{\\\"type\\\":\\\"object\\\",\\\"properties\\\":{\\\"name\\\":{\\\"type\\\":\\\"string\\\",\\\"x-visible\\\":true}},\\\"required\\\":[\\\"name\\\"]}}}]\",\n    \"toolDetails\" : [ {\n      \"toolId\" : \"HELLO_TOOL\",\n      \"toolName\" : \"Hello Tool\",\n      \"toolGuideline\" : \"Receives a name parameter and appends hello greeting before the name\",\n      \"async\" : false,\n      \"toolDescription\" : \"Hello Tool \"\n    }, {\n      \"toolId\" : \"HELLO_TOOL_1\",\n      \"toolName\" : \"Hello Tool\",\n      \"toolGuideline\" : \"Receives a name parameter and appends hello greeting before the name\",\n      \"async\" : false,\n      \"toolDescription\" : \"Hello Tool \"\n    } ]\n  } ],\n  \"output\" : \"\",\n  \"agentEndpointURI\" : \"\",\n  \"agentId\" : \"\",\n  \"projectId\" : \"\"\n}",
+    "ResourceURI" : "/start",
+    "copyFaultFromModel" : "true",
+    "generateConnectivityPropertiesInboundRequest" : "RESTINREQ",
+    "requestJsonTopLevelArray" : "false",
+    "activationSpecClass" : "oracle.tip.adapter.cloud.CloudActivationSpec",
+    "generateSecurityPropertiesInboundRequest" : "SECURITYPROPSRESTINREQ",
+    "HttpVerb" : "POST",
+    "QueryParameters" : "conversationId, isCallback",
+    "invocationStyle" : "NOTIFICATION",
+    "isRequestJsonSchema" : "false",
+    "isRequestRawBytes" : "false",
+    "RequestElementName" : "request-wrapper",
+    "allowChangeDefaultNamespace" : "false",
+    "operations" : "default",
+    "generateInboundCredentials" : "true",
+    "generatePartnerLink" : "false",
+    "HTTPHeadersAdded" : "true",
+    "forceWsdlTypesBuild" : "true",
+    "generateConnectivityPropertiesInboundResponse" : "RESTINRES",
+    "postQueryParamsAsContent" : "false",
+    "RequestMediaType" : "application/json"
+  }
+}

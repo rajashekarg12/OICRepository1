@@ -1,0 +1,1 @@
+{"id":"MYTESTEVENT|1","name":"mytestEvent","description":"","code":"MYTESTEVENT","schemaType":"json","revision":"1","schema":"{\n    \"input1\": \"value\", \n    \"input2\": 123, \n    \"input3\": false\n}","hasPublisher":true,"hasSubscriber":false,"isPublicScope":false}

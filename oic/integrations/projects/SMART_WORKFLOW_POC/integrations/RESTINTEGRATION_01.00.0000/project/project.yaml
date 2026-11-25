@@ -1,0 +1,48 @@
+---
+id: SMART_WORKFLOW_POC
+code: SMART_WORKFLOW_POC
+name: Smart Workflow POC
+description: only for for Testing
+mcpEnabled: false
+type: DEVELOPED
+smartTags:
+- "app:rest,style:app driven orchestration"
+revision: 0
+projectRevision: 108
+status: CONFIGURED
+createdBy: rajashekar.gaddi@flexagon.com
+createdDate: 2026-11-23T04:45:03.059+0000
+updatedBy: rajashekar.gaddi@flexagon.com
+updatedDate: 2026-11-23T04:45:03.059+0000
+latestBy: avnish.patel@flexagon.com
+latestDate: 2026-11-25T04:35:27.992+0000
+CAV: 1
+simplifiedMode: false
+assets:
+  integrations:
+  - id: RESTINTEGRATION|01.00.0000
+    name: RestIntegration
+    revision: 0
+    updatedBy: rajashekar.gaddi@flexagon.com
+    updatedDate: 2026-11-23T04:45:03.059+0000
+  connections:
+  - id: RESTCONN
+    name: RestConn
+    revision: 0
+    updatedBy: rajashekar.gaddi@flexagon.com
+    updatedDate: 2026-11-23T04:45:01.619+0000
+  lookups:
+  - id: Mangolookup
+    name: Mangolookup
+    revision: 0
+    updatedBy: rajashekar.gaddi@flexagon.com
+    updatedDate: 2026-11-23T04:45:03.059+0000
+  labels:
+  - id: FD_1.0.3.DEFAULT_1795581327811
+    name: FD_1.0.3.default_1795581327811
+    revision: 0
+    updatedBy: avnish.patel@flexagon.com
+    updatedDate: 2026-11-25T04:35:27.992+0000
+origin:
+  tenantOCID: ocid1.tenancy.oc1..aaaaaaaahpnjx74d6mrng7xemyfnbfaxdzhlgdpoxfxmrwivslyktofveiwq
+  serviceInstanceOCID: ocid1.integrationinstance.oc1.iad.amaaaaaavtuicmqa22bei2i6w2uovbbnwoksgxuhuwhjifpl6xinh3hqwmnq

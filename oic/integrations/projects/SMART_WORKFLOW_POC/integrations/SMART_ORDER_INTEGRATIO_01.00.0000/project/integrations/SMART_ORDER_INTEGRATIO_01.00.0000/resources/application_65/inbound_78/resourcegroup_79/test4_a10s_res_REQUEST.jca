@@ -1,0 +1,29 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/rpa/test4-a10s-res/types" adapterType="RPA" name="test4_a10s_res_REQUESTPortType" adapter="rpa" wsdlLocation="test4_a10s_res_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.connector.rpa.RPAAdapterConnectionFactory">
+      <property name="applicationVersion" value="1.0"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="test4_a10s_res_REQUESTPortType" operation="RPAFlow">
+    <interaction-spec className="oracle.tip.adapter.cloud.CloudInteractionSpec">
+      <property name="targetOperation" value="RPAFlow"/>
+      <property name="enforceResponseSizeRestriction" value="true"/>
+      <property name="oic.gen3.invoke" value="true"/>
+      <property name="HttpVerb" value="GET"/>
+      <property name="RequestElementNS" value="http://xmlns.oracle.com/cloud/adapter/rpa/test4-a10s-res/types"/>
+      <property name="RequestElementName" value="RequestWrapper"/>
+      <property name="ResourceURI" value="/rpa/v1/internal/orpaInstances/ocid1.orpa-prod.oc1.iad.amaaaaaa5vehu5yasbkzf3kxda7bpczgooh2tjwdszvgay6d2ffuhvi37ywa/instances"/>
+      <property name="ResponseElementNS" value="http://xmlns.oracle.com/cloud/adapter/rpa/test4-a10s-res/types"/>
+      <property name="ResponseElementName" value="ResponseWrapper"/>
+      <property name="callType" value="resultCall"/>
+      <property name="integrationSchemaNamespace" value="http://xmlns.oracle.com/cloud/adapter/rpa/test4-a10s-res/types"/>
+      <property name="integrationWSDLNamespace" value="http://xmlns.oracle.com/cloud/adapter/rpa/test4-a10s-res"/>
+      <property name="sourceNamespaceList" value="ns2=http://xmlns.oracle.com/cloud/adapter/rpa/test4/types"/>
+      <property name="sourceXpathExpression" value="/ns2:ExecuteRPAFlowResponse/ns2:ResponseWrapper/ns2:id"/>
+      <property name="supportEnvExport" value="true"/>
+      <property name="targetNamespaceList" value="ns1=http://xmlns.oracle.com/cloud/adapter/rpa/test4-a10s-res/types"/>
+      <property name="targetXpathExpression" value="/ns1:RPAFlow/ns1:RequestWrapper/ns1:id"/>
+      <property name="x-rpa-service-instance-id" value="ocid1.orpa-prod.oc1.iad.amaaaaaa5vehu5yasbkzf3kxda7bpczgooh2tjwdszvgay6d2ffuhvi37ywa"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>
