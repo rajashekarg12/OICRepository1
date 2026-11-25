@@ -1,1 +1,0 @@
-{"id":"MANGO_01.00.0000","icsProject":{"version":"01.00.0000","percentageComplete":100,"modelType":"FREEFORM","projectCode":"MANGO","processorCount":{"INTEGRATION_METADATA":1,"MESSAGE_TRACKER":1,"TRANSFORMER":4,"CALLOUT":1,"SOURCE":1,"TARGET":3,"UNKNOWN_INVOKE":3},"smartTags":"app:REST, app:appevent, app:rpa, app:oracle:opa-decision,style:App Driven Orchestration"}}
